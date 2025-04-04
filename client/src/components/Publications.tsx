@@ -2,6 +2,14 @@ import { motion } from 'framer-motion';
 
 const publicationItems = [
   {
+    title: "Probing the Approaches to Teaching Literature to EFL Students - Graduate Learners' Perspective",
+    journal: "Journal of Arts and Humanities, Vol. 11(01), October 2023",
+    description: "Co-authored with Najmus Sarifa (King Khalid University). Research on effective literature teaching approaches for graduate EFL students.",
+    url: "https://www.researchgate.net/publication/374581704_Probing_the_Approaches_to_Teaching_Literature_to_EFL_Students_-Graduate_Learners'_Perspective",
+    doi: "10.18533/jah.v11i02.2236",
+    featured: true
+  },
+  {
     title: "Nature in the Hands of Wordsworth",
     journal: "International Journal of Linguistics, Literature and Translation (IJLLT)",
     description: "An exploration of Wordsworth's portrayal of nature and its significance in his works.",
@@ -133,6 +141,68 @@ const Publications = () => {
         </motion.h2>
         
         <motion.h3 
+          className="text-xl text-[#25092e] text-center mb-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
+          Featured Publication
+        </motion.h3>
+        
+        {/* Featured Publication */}
+        {publicationItems.filter(item => item.featured).map((item, index) => (
+          <motion.div 
+            key={`featured-${index}`}
+            className="max-w-4xl mx-auto mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden border-2 border-[#f2c0DD] p-6">
+              <div className="flex flex-col md:flex-row items-start gap-6">
+                <div className="md:w-1/4 flex justify-center">
+                  <div className="bg-[#f2c0DD] bg-opacity-20 rounded-full p-6 w-32 h-32 flex items-center justify-center">
+                    <i className="fas fa-star text-4xl text-[#f2c0DD]"></i>
+                  </div>
+                </div>
+                <div className="md:w-3/4">
+                  <div className="flex items-center mb-3">
+                    <h3 className="font-semibold text-xl text-[#A3886b]">{item.title}</h3>
+                    <span className="ml-3 px-2 py-1 bg-[#f2c0DD] bg-opacity-20 text-[#A3886b] text-xs rounded-full">Featured</span>
+                  </div>
+                  <p className="text-[#25092e] opacity-80 mb-2">{item.journal}</p>
+                  <p className="text-[#25092e] opacity-80 mb-2 text-sm"><strong>DOI:</strong> {item.doi}</p>
+                  <p className="text-[#25092e] opacity-80 mb-4">{item.description}</p>
+                  <div className="flex items-center space-x-4">
+                    <a 
+                      href={item.url} 
+                      target="_blank" 
+                      rel="noreferrer"
+                      className="inline-flex items-center bg-[#2176FF] text-white py-2 px-4 rounded-md shadow-sm hover:bg-opacity-90 transition-all duration-200"
+                      aria-label={`Read the publication: ${item.title}`}
+                    >
+                      <i className="fas fa-book-open mr-2"></i>
+                      <span>Read Publication</span>
+                    </a>
+                    <a 
+                      href={`https://doi.org/${item.doi}`} 
+                      target="_blank" 
+                      rel="noreferrer"
+                      className="inline-flex items-center text-[#25092e] hover:text-[#A3886b] transition-colors duration-300"
+                    >
+                      <i className="fas fa-external-link-alt mr-1"></i>
+                      <span>DOI Link</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+        
+        <motion.h3 
           className="text-xl text-[#25092e] text-center mb-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -149,8 +219,8 @@ const Publications = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {/* Journal Publications */}
-          {publicationItems.map((item, index) => (
+          {/* Journal Publications (excluding featured) */}
+          {publicationItems.filter(item => !item.featured).map((item, index) => (
             <motion.div 
               key={`pub-${index}`}
               className="bg-white rounded-xl shadow-md overflow-hidden gradient-border hover-grow"
