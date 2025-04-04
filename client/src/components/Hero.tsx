@@ -25,10 +25,10 @@ const Hero = () => {
                 Contact Me
               </a>
               <a 
-                href="#waitlist" 
+                href="#publications" 
                 className="bg-[#f2c0DD] hover:bg-opacity-90 text-[#25092e] font-semibold rounded-lg px-6 py-3 text-center transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
               >
-                Join Waitlist
+                View Publications
               </a>
             </div>
           </motion.div>

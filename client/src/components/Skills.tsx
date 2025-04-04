@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import ScrollAnimation from './3d-scroll-animation';
 
 const skillCategories = [
   {
@@ -108,36 +109,43 @@ const Skills = () => {
           viewport={{ once: true }}
         >
           {skillCategories.map((category, categoryIndex) => (
-            <motion.div 
+            <ScrollAnimation 
               key={categoryIndex}
-              className="bg-white rounded-xl shadow-md p-6 gradient-border hover-grow"
-              variants={itemVariants}
+              className="relative"
+              direction={categoryIndex % 2 === 0 ? 'up' : 'down'}
+              rotation={categoryIndex % 3 === 0}
+              scale
+              threshold={0.1}
             >
-              <h3 className="font-semibold text-xl text-[#A3886b] mb-4 flex items-center">
-                <i className={`${category.icon} text-[#f2c0DD] mr-3`}></i>
-                {category.title}
-              </h3>
-              
-              <div className="space-y-3">
-                {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex}>
-                    <div className="flex justify-between mb-1">
-                      <span className="text-sm font-medium text-[#25092e]">{skill.name}</span>
-                      <span className="text-sm font-medium text-[#f2c0DD]">{skill.level}</span>
+              <div 
+                className="bg-white rounded-xl shadow-md p-6 gradient-border hover-grow"
+              >
+                <h3 className="font-semibold text-xl text-[#A3886b] mb-4 flex items-center">
+                  <i className={`${category.icon} text-[#f2c0DD] mr-3`}></i>
+                  {category.title}
+                </h3>
+                
+                <div className="space-y-3">
+                  {category.skills.map((skill, skillIndex) => (
+                    <div key={skillIndex}>
+                      <div className="flex justify-between mb-1">
+                        <span className="text-sm font-medium text-[#25092e]">{skill.name}</span>
+                        <span className="text-sm font-medium text-[#f2c0DD]">{skill.level}</span>
+                      </div>
+                      <div className="w-full bg-gray-200 rounded-full h-2">
+                        <motion.div 
+                          className="bg-[#f2c0DD] h-2 rounded-full"
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${skill.percentage}%` }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 1, delay: 0.2 }}
+                        ></motion.div>
+                      </div>
                     </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
-                      <motion.div 
-                        className="bg-[#f2c0DD] h-2 rounded-full"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.percentage}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, delay: 0.2 }}
-                      ></motion.div>
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </motion.div>
+            </ScrollAnimation>
           ))}
         </motion.div>
       </div>

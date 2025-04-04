@@ -8,6 +8,7 @@ import Education from '@/components/Education';
 import CeltaCertification from '@/components/CeltaCertification';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import Chatbot from '@/components/Chatbot';
 
 const Home = () => {
   useEffect(() => {
@@ -25,6 +26,7 @@ const Home = () => {
       <CeltaCertification />
       <Contact />
       <Footer />
+      <Chatbot />
     </div>
   );
 };

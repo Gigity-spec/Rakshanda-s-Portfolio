@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import ScrollAnimation from './3d-scroll-animation';
 
 const experienceItems = [
   {
@@ -56,13 +57,12 @@ const Experience = () => {
         
         <div className="max-w-4xl mx-auto">
           {experienceItems.map((item, index) => (
-            <motion.div 
+            <ScrollAnimation 
               key={index}
               className={`${index !== experienceItems.length - 1 ? 'mb-12' : ''} relative hover-grow`}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 * index }}
+              direction={index % 2 === 0 ? 'right' : 'left'}
+              rotation
+              scale
             >
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-1/3 mb-4 md:mb-0">
@@ -100,7 +100,7 @@ const Experience = () => {
                   </ul>
                 </div>
               </div>
-            </motion.div>
+            </ScrollAnimation>
           ))}
         </div>
       </div>
