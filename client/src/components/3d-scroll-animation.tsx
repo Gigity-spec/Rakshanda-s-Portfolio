@@ -21,20 +21,20 @@ export const ScrollAnimation = ({
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start end', `end ${1 - threshold}`]
+    offset: ['start end', 'center center']
   });
 
   // Calculate transform values based on direction
   const xValues = {
     up: [0, 0],
     down: [0, 0],
-    left: [50, 0],
-    right: [-50, 0],
+    left: [25, 0],
+    right: [-25, 0],
   };
   
   const yValues = {
-    up: [50, 0],
-    down: [-50, 0],
+    up: [25, 0],
+    down: [-25, 0],
     left: [0, 0],
     right: [0, 0],
   };
