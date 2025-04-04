@@ -26,19 +26,7 @@ const CeltaCertification = () => {
   return (
     <section id="celta" className="py-8 lg:py-12 celta-section">
       <div className="container mx-auto px-4">
-        <motion.div
-          className="flex justify-center mb-6"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <img 
-            src="/images/CELTA_Logo.svg"
-            alt="Cambridge CELTA Logo" 
-            className="w-48 h-48 object-contain"
-          />
-        </motion.div>
+        
         
         <motion.h3 
           className="font-soria text-2xl lg:text-3xl text-[#A3886b] text-center mb-6"
