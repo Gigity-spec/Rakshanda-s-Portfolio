@@ -118,14 +118,14 @@ const Skills = () => {
               threshold={0.1}
             >
               <div 
-                className="bg-white rounded-xl shadow-md p-6 gradient-border hover-grow h-full flex flex-col min-h-[420px] justify-between"
+                className="bg-white rounded-xl shadow-md p-6 gradient-border hover-grow h-full flex flex-col min-h-[300px] justify-between"
               >
-                <h3 className="font-semibold text-xl text-[#A3886b] mb-4 flex items-center">
+                <h3 className="font-semibold text-xl text-[#A3886b] mb-3 flex items-center">
                   <i className={`${category.icon} text-[#f2c0DD] mr-3`}></i>
                   {category.title}
                 </h3>
                 
-                <div className="space-y-3">
+                <div className="space-y-2">
                   {category.skills.map((skill, skillIndex) => (
                     <div key={skillIndex}>
                       <div className="flex justify-between mb-1">
