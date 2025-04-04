@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <rect width="200" height="200" fill="white"/>
+  <circle cx="100" cy="100" r="80" fill="#f7f7f7" stroke="#116530" stroke-width="4"/>
+  <text x="100" y="85" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#116530" font-weight="bold">KING KHALID</text>
+  <text x="100" y="110" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#116530" font-weight="bold">UNIVERSITY</text>
+  <text x="100" y="135" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#116530">SAUDI ARABIA</text>
+</svg>

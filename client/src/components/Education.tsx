@@ -5,25 +5,29 @@ const educationItems = [
     title: "CELTA Certification",
     year: "2025",
     description: "Professional teaching certificate for English language instruction.",
-    imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80"
+    logo: "/images/CELTA_Logo.svg",
+    alt: "Cambridge CELTA Logo"
   },
   {
     title: "Masters in English Literature",
     year: "The University of Punjab, Pakistan (2000)",
     description: "With optional paper of ELT (English Language Teaching)",
-    imageUrl: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80"
+    logo: "/images/Punjab_University_Logo.svg",
+    alt: "University of Punjab Logo"
   },
   {
     title: "Bachelors in Arts and Humanities",
     year: "The University of Punjab, Pakistan (1997)",
     description: "Foundation in humanities and liberal arts education.",
-    imageUrl: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=800&q=80"
+    logo: "/images/Punjab_University_Logo.svg",
+    alt: "University of Punjab Logo"
   },
   {
     title: "National Cadet Core Training",
     year: "1995",
     description: "Leadership and discipline training program.",
-    imageUrl: "https://images.unsplash.com/photo-1594098404468-c39111286d95?auto=format&fit=crop&w=800&q=80"
+    logo: "/images/NCC_Logo.svg",
+    alt: "National Cadet Corps Logo"
   }
 ];
 
@@ -32,37 +36,49 @@ const professionalDevelopmentItems = [
     title: "Cambridge Professional Learning and Development",
     year: "February 16, 2020",
     description: "Training session on Academic Writing and Oracy in Abha",
-    type: "workshop"
+    type: "workshop",
+    logo: "/images/Cambridge_Professional_Logo.svg",
+    alt: "Cambridge Professional Learning Logo"
   },
   {
     title: "Making English Language Literacy Accessible for students",
     year: "November 30, 2019",
     description: "Training session by Dr. Eli Ghazele in Abha",
-    type: "workshop"
+    type: "workshop",
+    logo: "/images/KKU_Logo.svg",
+    alt: "King Khalid University Logo"
   },
   {
     title: "E-Learning Practitioner Course",
     year: "2019",
     description: "Two-week online course by King Khalid University, Saudi Arabia",
-    type: "online"
+    type: "online",
+    logo: "/images/KKU_Logo.svg",
+    alt: "King Khalid University Logo"
   },
   {
     title: "Unlock by Cambridge: Foundation Courses",
     year: "January 13, 2019",
     description: "Professional training conducted by Claire Hattle at King Khalid University, Abha",
-    type: "training"
+    type: "training",
+    logo: "/images/Cambridge_Professional_Logo.svg",
+    alt: "Cambridge Professional Learning Logo"
   },
   {
     title: "Digital Experience 2022",
     year: "February 23, 2022",
     description: "Cambridge Assessment English webinar on transforming teaching using Cambridge One and Blackboard",
-    type: "webinar"
+    type: "webinar",
+    logo: "/images/Cambridge_Professional_Logo.svg",
+    alt: "Cambridge Professional Learning Logo"
   },
   {
     title: "Blackboard Courses",
     year: "2019-2022",
     description: "Online courses in Illuminate Live, Blackboard testing, and Blackboard ultra",
-    type: "online"
+    type: "online",
+    logo: "/images/KKU_Logo.svg",
+    alt: "King Khalid University Logo"
   }
 ];
 
@@ -122,11 +138,11 @@ const Education = () => {
               className="bg-white rounded-xl shadow-md overflow-hidden gradient-border hover-grow"
               variants={itemVariants}
             >
-              <div className="h-40 bg-gradient-to-r from-[#f2c0DD] to-[#A3886b] opacity-20 flex items-center justify-center">
+              <div className="h-40 bg-gradient-to-r from-[#f2c0DD] to-[#A3886b] flex items-center justify-center">
                 <img 
-                  src={item.imageUrl} 
-                  alt="University campus" 
-                  className="w-full h-full object-cover mix-blend-overlay" 
+                  src={item.logo} 
+                  alt={item.alt} 
+                  className="w-32 h-32 object-contain" 
                 />
               </div>
               <div className="p-6">
@@ -161,19 +177,21 @@ const Education = () => {
               className="bg-white rounded-xl shadow-md overflow-hidden gradient-border hover-grow"
               variants={itemVariants}
             >
-              <div className="p-6">
-                <div className="flex items-start mb-3">
-                  <div className="bg-[#f2c0DD] bg-opacity-20 rounded-full p-2 mr-3 mt-1">
-                    {item.type === "workshop" && <i className="fas fa-users-class text-[#f2c0DD]"></i>}
-                    {item.type === "online" && <i className="fas fa-laptop text-[#f2c0DD]"></i>}
-                    {item.type === "webinar" && <i className="fas fa-video text-[#f2c0DD]"></i>}
-                    {item.type === "training" && <i className="fas fa-graduation-cap text-[#f2c0DD]"></i>}
-                    {!["workshop", "online", "webinar", "training"].includes(item.type) && <i className="fas fa-certificate text-[#f2c0DD]"></i>}
+              <div className="p-4">
+                <div className="flex flex-col items-center mb-3">
+                  <div className="w-16 h-16 mb-3">
+                    <img src={item.logo} alt={item.alt} className="w-full h-full object-contain" />
                   </div>
-                  <div>
+                  <div className="text-center">
                     <h3 className="font-semibold text-lg text-[#A3886b] mb-2">{item.title}</h3>
                     <p className="text-sm text-[#25092e] opacity-70 mb-2">{item.year}</p>
                     <p className="text-[#25092e] opacity-80 text-sm">{item.description}</p>
+                    <div className="mt-2 bg-[#f2c0DD] bg-opacity-20 rounded-full px-3 py-1 inline-block">
+                      {item.type === "workshop" && <span className="text-xs text-[#A3886b]">Workshop</span>}
+                      {item.type === "online" && <span className="text-xs text-[#A3886b]">Online Course</span>}
+                      {item.type === "webinar" && <span className="text-xs text-[#A3886b]">Webinar</span>}
+                      {item.type === "training" && <span className="text-xs text-[#A3886b]">Training</span>}
+                    </div>
                   </div>
                 </div>
               </div>

@@ -81,10 +81,25 @@ const Experience = () => {
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-1/3 mb-4 md:mb-0">
                   <div className="bg-white rounded-lg p-5 shadow-md gradient-border h-full">
-                    <h3 className="font-bold text-xl text-[#A3886b]">{item.institution}</h3>
-                    <p className="text-[#25092e] opacity-80">{item.period}</p>
-                    <p className="mt-2 text-[#25092e]">{item.position}</p>
-                    <p className="mt-2 text-sm text-[#25092e] opacity-70 mb-4">{item.location}</p>
+                    <div className="flex flex-col items-center mb-4">
+                      {item.institution === "King Khalid University" ? (
+                        <img
+                          src="/images/King_Khalid_University_Logo.png"
+                          alt="King Khalid University Logo"
+                          className="w-[180px] h-auto mb-4"
+                        />
+                      ) : (
+                        <img
+                          src="/images/Fatima_Jinnah_College_Logo.png"
+                          alt="Fatima Jinnah College Logo"
+                          className="w-[180px] h-auto mb-4"
+                        />
+                      )}
+                    </div>
+                    <h3 className="font-bold text-xl text-[#A3886b] text-center">{item.institution}</h3>
+                    <p className="text-[#25092e] opacity-80 text-center">{item.period}</p>
+                    <p className="mt-2 text-[#25092e] text-center">{item.position}</p>
+                    <p className="mt-2 text-sm text-[#25092e] opacity-70 mb-4 text-center">{item.location}</p>
                     
                     {item.institution === "King Khalid University" && (
                       <a 
@@ -92,11 +107,11 @@ const Experience = () => {
                         target="_blank"
                         rel="noreferrer"
                         download="Rakhshinda-Jabeen-KKU-Experience.pdf"
-                        className="inline-flex items-center bg-[#2176FF] text-white py-2 px-4 rounded-md shadow-md hover:bg-opacity-90 transition-all duration-200 justify-center mt-3"
+                        className="inline-flex items-center bg-[#2176FF] text-white py-2 px-4 rounded-md shadow-md hover:bg-opacity-90 transition-all duration-200 justify-center w-full mt-3"
                         aria-label="Download King Khalid University Experience Certificate"
                       >
                         <i className="fas fa-file-pdf mr-2"></i>
-                        <span>Download Experience Certificate</span>
+                        <span>Download Certificate</span>
                       </a>
                     )}
                   </div>
