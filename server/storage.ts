@@ -64,7 +64,19 @@ export class MemStorage implements IStorage {
   async createContactMessage(message: InsertContactMessage): Promise<ContactMessage> {
     const id = this.contactId++;
     const createdAt = new Date();
-    const contactMessage: ContactMessage = { ...message, id, createdAt };
+    
+    // Explicitly reconstruct the object without using spread operator to avoid issues with undefined properties
+    const contactMessage: ContactMessage = { 
+      id,
+      name: message.name, 
+      email: message.email,
+      subject: message.subject,
+      message: message.message,
+      phone: message.phone ?? null,  // Use nullish coalescing to convert undefined to null
+      company: message.company ?? null,
+      createdAt
+    };
+    
     this.contactMessages.set(id, contactMessage);
     return contactMessage;
   }

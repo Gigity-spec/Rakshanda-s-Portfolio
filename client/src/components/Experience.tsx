@@ -11,20 +11,31 @@ const experienceItems = [
       "Organizing, planning, and teaching a variety of age groups and classes",
       "Creating original content through planning, scripting, and production",
       "Teaching students how to analyze literature and composition",
-      "Using Blackboard for interactive online learning resources"
+      "Preparing exams, exercises, and providing assessment with relevant feedback",
+      "Using Blackboard for interactive online learning resources and assessment",
+      "Conducting SPSS result analysis and reporting to department",
+      "Establishing supportive learning environments and creating rewards to encourage students",
+      "Teaching specialized English classes to students in science, economics, business administration",
+      "Participating in continuing education programs and professional development",
+      "Assisting program coordinators in ensuring goals are fulfilled",
+      "Compiling mandatory course reports for Quality Unit at semester end"
     ]
   },
   {
-    institution: "Fatima Jinnah Degree College",
+    institution: "Fatima Jinnah Degree College for Women",
     period: "2000 - 2007",
     position: "English Lecturer, Head of Department",
     location: "Faisalabad, Pakistan",
     responsibilities: [
       "Taught ESL to college students of various levels",
       "Taught literature and language to graduate students",
-      "Developed exam questions and provided efficient assessment",
-      "Involved in mentoring students for academic achievements",
-      "Worked as Head of Department assisting with administrative affairs"
+      "Developed exam questions for mid-semester and final exams",
+      "Provided efficient assessment and timely feedback on student performance",
+      "Mentored students for academic achievements and extra-curricular activities",
+      "Incorporated available technology into course format and assignments",
+      "Organized and participated in cultural and social activities",
+      "Served as Head of Department, assisting principal with staff affairs",
+      "Managed administrative duties including leave applications and exam control"
     ]
   }
 ];

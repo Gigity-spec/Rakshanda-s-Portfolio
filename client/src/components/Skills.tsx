@@ -8,7 +8,9 @@ const skillCategories = [
       { name: "Curriculum Design", level: "Expert", percentage: 95 },
       { name: "Classroom Management", level: "Expert", percentage: 95 },
       { name: "Lesson Planning", level: "Expert", percentage: 90 },
-      { name: "Teaching Methodology", level: "Expert", percentage: 92 }
+      { name: "Teaching Methodology", level: "Expert", percentage: 92 },
+      { name: "EFL/ESL Instruction", level: "Expert", percentage: 95 },
+      { name: "Literature Analysis", level: "Expert", percentage: 94 }
     ]
   },
   {
@@ -25,8 +27,10 @@ const skillCategories = [
     icon: "fas fa-laptop-code",
     skills: [
       { name: "SPSS (Data Analysis)", level: "Proficient", percentage: 85 },
-      { name: "Ms Office Suite", level: "Proficient", percentage: 90 },
-      { name: "Blackboard LMS", level: "Proficient", percentage: 88 }
+      { name: "MS Office Suite", level: "Proficient", percentage: 90 },
+      { name: "Blackboard LMS", level: "Proficient", percentage: 88 },
+      { name: "Google Workspace", level: "Proficient", percentage: 85 },
+      { name: "PowerPoint", level: "Proficient", percentage: 92 }
     ]
   },
   {
@@ -36,7 +40,29 @@ const skillCategories = [
       { name: "Communication", level: "Expert", percentage: 95 },
       { name: "Organization", level: "Expert", percentage: 90 },
       { name: "Creativity", level: "Expert", percentage: 92 },
-      { name: "Collaboration", level: "Expert", percentage: 90 }
+      { name: "Collaboration", level: "Expert", percentage: 90 },
+      { name: "Positive Attitude", level: "Expert", percentage: 95 },
+      { name: "Adaptability", level: "Expert", percentage: 88 }
+    ]
+  },
+  {
+    title: "Research Skills",
+    icon: "fas fa-search",
+    skills: [
+      { name: "Academic Writing", level: "Expert", percentage: 90 },
+      { name: "Research Methodology", level: "Advanced", percentage: 85 },
+      { name: "Literature Review", level: "Advanced", percentage: 88 },
+      { name: "Data Analysis", level: "Proficient", percentage: 82 }
+    ]
+  },
+  {
+    title: "Professional Development",
+    icon: "fas fa-certificate",
+    skills: [
+      { name: "CELTA Certification", level: "Certified", percentage: 100 },
+      { name: "Workshop Facilitation", level: "Advanced", percentage: 88 },
+      { name: "Mentoring", level: "Advanced", percentage: 85 },
+      { name: "Continuous Learning", level: "Expert", percentage: 95 }
     ]
   }
 ];
