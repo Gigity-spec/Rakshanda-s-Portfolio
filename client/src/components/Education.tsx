@@ -123,20 +123,20 @@ const Education = () => {
           {educationItems.map((item, index) => (
             <motion.div 
               key={index}
-              className="bg-white rounded-xl shadow-lg overflow-hidden gradient-border hover-grow academic-card"
+              className="bg-white rounded-xl shadow-md overflow-hidden gradient-border hover-grow"
               variants={itemVariants}
             >
-              <div className="h-52 flex items-center justify-center bg-white">
-                <img 
-                  src={item.logo} 
-                  alt={item.alt} 
-                  className="w-40 h-40 object-contain education-logo" 
-                />
-              </div>
-              <div className="p-8">
-                <h3 className="font-semibold text-xl text-[#A3886b] mb-3">{item.title}</h3>
-                <p className="text-md text-[#25092e] opacity-70 mb-4">{item.year}</p>
-                <p className="text-[#25092e] opacity-80 text-md">{item.description}</p>
+              <div className="p-4">
+                <div className="flex flex-col items-center mb-3">
+                  <div className="w-16 h-16 mb-3">
+                    <img src={item.logo} alt={item.alt} className="w-full h-full object-contain" />
+                  </div>
+                  <div className="text-center">
+                    <h3 className="font-semibold text-lg text-[#A3886b] mb-2">{item.title}</h3>
+                    <p className="text-sm text-[#25092e] opacity-70 mb-2">{item.year}</p>
+                    <p className="text-[#25092e] opacity-80 text-sm">{item.description}</p>
+                  </div>
+                </div>
               </div>
             </motion.div>
           ))}
