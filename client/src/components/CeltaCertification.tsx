@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useSpring, animated } from 'react-spring';
+import celtaLogo from '../assets/CELTA_Logo.svg';
 
 const CeltaCertification = () => {
   // Spring animation for 3D effect on certificate card

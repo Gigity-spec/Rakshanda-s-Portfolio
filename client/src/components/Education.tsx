@@ -126,7 +126,7 @@ const Education = () => {
               className="bg-white rounded-xl shadow-lg overflow-hidden gradient-border hover-grow academic-card"
               variants={itemVariants}
             >
-              <div className="h-52 bg-gradient-to-r from-[#f2c0DD] to-[#A3886b] flex items-center justify-center">
+              <div className="h-52 flex items-center justify-center bg-white">
                 <img 
                   src={item.logo} 
                   alt={item.alt} 

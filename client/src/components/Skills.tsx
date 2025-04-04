@@ -102,7 +102,7 @@ const Skills = () => {
         </motion.h2>
         
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -111,14 +111,14 @@ const Skills = () => {
           {skillCategories.map((category, categoryIndex) => (
             <ScrollAnimation 
               key={categoryIndex}
-              className="relative"
+              className="relative h-full"
               direction={categoryIndex % 2 === 0 ? 'up' : 'down'}
               rotation={categoryIndex % 3 === 0}
               scale
               threshold={0.1}
             >
               <div 
-                className="bg-white rounded-xl shadow-md p-6 gradient-border hover-grow"
+                className="bg-white rounded-xl shadow-md p-6 gradient-border hover-grow h-full flex flex-col"
               >
                 <h3 className="font-semibold text-xl text-[#A3886b] mb-4 flex items-center">
                   <i className={`${category.icon} text-[#f2c0DD] mr-3`}></i>
