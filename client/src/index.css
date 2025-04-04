@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@font-face {
+  font-family: 'Soria';
+  src: url('https://fonts.cdnfonts.com/css/soria') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.gradient-border {
+  position: relative;
+  border-radius: 0.5rem;
+  background: white;
+  padding: 0.1rem;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0.5rem;
+  padding: 2px;
+  background: linear-gradient(to right, #f2c0DD, #A3886b);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.hover-grow {
+  transition: transform 0.3s ease;
+}
+
+.hover-grow:hover {
+  transform: translateY(-4px);
+}
+
+.section-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #f9f7f5 100%);
+}
+
+.form-input:focus {
+  border-color: #f2c0DD;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(242, 192, 221, 0.3);
+}
+
+.font-soria {
+  font-family: 'Soria', serif;
+}
