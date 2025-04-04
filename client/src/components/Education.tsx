@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 // Import logos directly using relative paths
-import punjabLogo from '/images/Punjab_University_Logo.png';
+import punjabLogo from '../assets/Punjab_University_Logo.png';
 import nccLogo from '../assets/NCC_Logo.png';
 import cambridgeLogo from '../assets/Cambridge_University_Logo.png';
 import kkuLogo from '../assets/King_Khalid_University_Logo.png';
