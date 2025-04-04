@@ -1,25 +1,30 @@
 import { motion } from 'framer-motion';
+// Import logos directly using relative paths
+import punjabLogo from '../assets/Punjab_University_Logo.png';
+import nccLogo from '../assets/NCC_Logo.png';
+import cambridgeLogo from '../assets/Cambridge_University_Logo.png';
+import kkuLogo from '../assets/King_Khalid_University_Logo.png';
 
 const educationItems = [
   {
     title: "Masters in English Literature",
     year: "The University of Punjab, Pakistan (2000)",
     description: "With optional paper of ELT (English Language Teaching)",
-    logo: "/images/Punjab_University_Logo.png",
+    logo: punjabLogo,
     alt: "University of Punjab Logo"
   },
   {
     title: "Bachelors in Arts and Humanities",
     year: "The University of Punjab, Pakistan (1997)",
     description: "Foundation in humanities and liberal arts education.",
-    logo: "/images/Punjab_University_Logo.png",
+    logo: punjabLogo,
     alt: "University of Punjab Logo"
   },
   {
     title: "National Cadet Core Training",
     year: "1995",
     description: "Leadership and discipline training program.",
-    logo: "/images/NCC_Logo.png",
+    logo: nccLogo,
     alt: "National Cadet Corps Logo"
   }
 ];
@@ -30,7 +35,7 @@ const professionalDevelopmentItems = [
     year: "February 16, 2020",
     description: "Training session on Academic Writing and Oracy in Abha",
     type: "workshop",
-    logo: "/images/Cambridge_University_Logo.png",
+    logo: cambridgeLogo,
     alt: "Cambridge University Logo"
   },
   {
@@ -38,7 +43,7 @@ const professionalDevelopmentItems = [
     year: "November 30, 2019",
     description: "Training session by Dr. Eli Ghazele in Abha",
     type: "workshop",
-    logo: "/images/King_Khalid_University_Logo.png",
+    logo: kkuLogo,
     alt: "King Khalid University Logo"
   },
   {
@@ -46,7 +51,7 @@ const professionalDevelopmentItems = [
     year: "2019",
     description: "Two-week online course by King Khalid University, Saudi Arabia",
     type: "online",
-    logo: "/images/King_Khalid_University_Logo.png",
+    logo: kkuLogo,
     alt: "King Khalid University Logo"
   },
   {
@@ -54,7 +59,7 @@ const professionalDevelopmentItems = [
     year: "January 13, 2019",
     description: "Professional training conducted by Claire Hattle at King Khalid University, Abha",
     type: "training",
-    logo: "/images/Cambridge_University_Logo.png",
+    logo: cambridgeLogo,
     alt: "Cambridge University Logo"
   },
   {
@@ -62,7 +67,7 @@ const professionalDevelopmentItems = [
     year: "February 23, 2022",
     description: "Cambridge Assessment English webinar on transforming teaching using Cambridge One and Blackboard",
     type: "webinar",
-    logo: "/images/Cambridge_University_Logo.png",
+    logo: cambridgeLogo,
     alt: "Cambridge University Logo"
   },
   {
@@ -70,7 +75,7 @@ const professionalDevelopmentItems = [
     year: "2019-2022",
     description: "Online courses in Illuminate Live, Blackboard testing, and Blackboard ultra",
     type: "online",
-    logo: "/images/King_Khalid_University_Logo.png",
+    logo: kkuLogo,
     alt: "King Khalid University Logo"
   }
 ];

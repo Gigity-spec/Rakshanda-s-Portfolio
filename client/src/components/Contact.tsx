@@ -104,11 +104,7 @@ const Contact = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="font-soria text-3xl lg:text-4xl text-[#A3886b] text-center mb-4">Get in Touch</h2>
-          <p className="text-lg text-[#25092e] opacity-80 text-center mb-12 max-w-2xl mx-auto">
-            Interested in hiring me for your institution, collaborating on a project, or seeking private tutoring? 
-            Send me a message and I'll get back to you soon.
-          </p>
+          <h2 className="font-soria text-3xl lg:text-4xl text-[#A3886b] text-center mb-12">Get in Touch</h2>
         </motion.div>
         
         <motion.div 
