@@ -40,18 +40,34 @@ const Contact = () => {
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
     try {
+      // Send form data to backend
       await apiRequest('POST', '/api/contact', data);
+      
+      // Create WhatsApp link with formatted message
+      const whatsappMessage = `*New Contact from Portfolio Website*%0A%0A*Name:* ${data.name}%0A*Email:* ${data.email}%0A*Phone:* ${data.phone || 'Not provided'}%0A*Company:* ${data.company || 'Not provided'}%0A*Subject:* ${data.subject}%0A%0A*Message:*%0A${data.message}`;
+      const whatsappUrl = `https://wa.me/966559201358?text=${whatsappMessage}`;
+      
+      // Open WhatsApp in a new tab
+      window.open(whatsappUrl, '_blank');
+      
+      // Send email using mailto link
+      const mailtoSubject = encodeURIComponent(data.subject);
+      const mailtoBody = encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone || 'Not provided'}\nCompany: ${data.company || 'Not provided'}\n\nMessage:\n${data.message}`);
+      const mailtoUrl = `mailto:rwahla7@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+      
+      // Open default email client
+      window.location.href = mailtoUrl;
       
       form.reset();
       toast({
         title: "Message Sent!",
-        description: "Thank you for reaching out. I'll respond to your message shortly.",
+        description: "Thank you for reaching out. The message has been sent to WhatsApp and Email.",
         duration: 5000,
       });
     } catch (error) {
       toast({
         title: "Something went wrong",
-        description: "Please try again later.",
+        description: "Please try again later or contact directly via WhatsApp or Email.",
         variant: "destructive",
       });
     } finally {
@@ -261,7 +277,10 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-medium text-[#25092e]">Email</h4>
-                    <a href="mailto:rwahla7@gmail.com" className="text-[#f2c0DD] hover:text-[#A3886b] transition-colors duration-300 mt-1">
+                    <a 
+                      href="mailto:rwahla7@gmail.com" 
+                      className="text-[#f2c0DD] hover:text-[#A3886b] transition-colors duration-300 mt-1 block"
+                    >
                       rwahla7@gmail.com
                     </a>
                   </div>
@@ -273,8 +292,19 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-medium text-[#25092e]">Phone</h4>
-                    <a href="tel:00966559201358" className="text-[#25092e] opacity-80 hover:text-[#A3886b] transition-colors duration-300 mt-1">
-                      +966 559 201 358
+                    <a 
+                      href="tel:00966559201358" 
+                      className="text-[#25092e] opacity-80 hover:text-[#A3886b] transition-colors duration-300 mt-1 block"
+                    >
+                      +966 55 920 1358
+                    </a>
+                    <a 
+                      href="https://wa.me/966559201358" 
+                      target="_blank" 
+                      rel="noreferrer"
+                      className="text-[#25AA63] hover:text-[#128C7E] transition-colors duration-300 mt-2 inline-flex items-center"
+                    >
+                      <i className="fab fa-whatsapp mr-1"></i> Message on WhatsApp
                     </a>
                   </div>
                 </div>

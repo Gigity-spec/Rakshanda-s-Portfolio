@@ -20,10 +20,10 @@ const Home = () => {
       <Header />
       <Hero />
       <Experience />
+      <CeltaCertification />
       <Publications />
       <Skills />
       <Education />
-      <CeltaCertification />
       <Contact />
       <Footer />
       <Chatbot />

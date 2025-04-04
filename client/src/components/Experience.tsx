@@ -78,10 +78,10 @@ const Experience = () => {
                         target="_blank"
                         rel="noreferrer"
                         download="Rakhshinda-Jabeen-KKU-Experience.pdf"
-                        className="inline-flex items-center text-[#2176FF] hover:text-[#A3886b] transition-colors duration-300 text-sm"
+                        className="inline-flex items-center bg-[#2176FF] text-white py-2 px-4 rounded-md shadow-md hover:bg-opacity-90 transition-all duration-200 justify-center mt-3"
                         aria-label="Download King Khalid University Experience Certificate"
                       >
-                        <i className="fas fa-file-pdf mr-1"></i>
+                        <i className="fas fa-file-pdf mr-2"></i>
                         <span>Download Experience Certificate</span>
                       </a>
                     )}
