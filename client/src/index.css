@@ -89,3 +89,33 @@ body {
 .scroll-animation-wrapper {
   position: relative;
 }
+
+.education-logo {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+  transition: all 0.3s ease;
+}
+
+.academic-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.academic-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(242, 192, 221, 0.1) 0%, rgba(163, 136, 107, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.academic-card:hover::after {
+  opacity: 1;
+}
+
+.academic-card:hover .education-logo {
+  transform: scale(1.05);
+}

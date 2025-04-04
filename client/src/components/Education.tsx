@@ -99,7 +99,7 @@ const Education = () => {
     <section id="education" className="py-6 lg:py-10 bg-white">
       <div className="container mx-auto px-4">
         <motion.h3 
-          className="text-xl text-[#25092e] text-center mb-10"
+          className="text-2xl text-[#A3886b] text-center mb-12 font-semibold"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -109,7 +109,7 @@ const Education = () => {
         </motion.h3>
         
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-16"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-24"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -118,27 +118,27 @@ const Education = () => {
           {educationItems.map((item, index) => (
             <motion.div 
               key={index}
-              className="bg-white rounded-xl shadow-md overflow-hidden gradient-border hover-grow"
+              className="bg-white rounded-xl shadow-lg overflow-hidden gradient-border hover-grow academic-card"
               variants={itemVariants}
             >
-              <div className="h-40 bg-gradient-to-r from-[#f2c0DD] to-[#A3886b] flex items-center justify-center">
+              <div className="h-52 bg-gradient-to-r from-[#f2c0DD] to-[#A3886b] flex items-center justify-center">
                 <img 
                   src={item.logo} 
                   alt={item.alt} 
-                  className="w-32 h-32 object-contain" 
+                  className="w-40 h-40 object-contain education-logo" 
                 />
               </div>
-              <div className="p-6">
-                <h3 className="font-semibold text-lg text-[#A3886b] mb-2">{item.title}</h3>
-                <p className="text-sm text-[#25092e] opacity-70 mb-3">{item.year}</p>
-                <p className="text-[#25092e] opacity-80 text-sm">{item.description}</p>
+              <div className="p-8">
+                <h3 className="font-semibold text-xl text-[#A3886b] mb-3">{item.title}</h3>
+                <p className="text-md text-[#25092e] opacity-70 mb-4">{item.year}</p>
+                <p className="text-[#25092e] opacity-80 text-md">{item.description}</p>
               </div>
             </motion.div>
           ))}
         </motion.div>
         
         <motion.h3 
-          className="text-xl text-[#25092e] text-center mb-10"
+          className="text-2xl text-[#A3886b] text-center mb-12 font-semibold"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

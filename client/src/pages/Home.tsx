@@ -21,8 +21,9 @@ const Home = () => {
       <Header />
       <Hero />
       <Experience />
-      <div id="education-section">
-        <h2 className="font-soria text-3xl lg:text-4xl text-[#A3886b] text-center mb-6 pt-16">
+      <div id="education-section" className="relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white opacity-30 z-0"></div>
+        <h2 className="font-soria text-4xl lg:text-5xl text-[#A3886b] text-center mb-10 pt-20 relative z-10">
           Education & Professional Development
         </h2>
         <CeltaCertification />
