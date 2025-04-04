@@ -34,7 +34,7 @@ const CeltaCertification = () => {
           transition={{ duration: 0.5 }}
         >
           <img 
-            src={celtaLogo}
+            src="/images/CELTA_Logo.svg"
             alt="Cambridge CELTA Logo" 
             className="w-48 h-48 object-contain"
           />
