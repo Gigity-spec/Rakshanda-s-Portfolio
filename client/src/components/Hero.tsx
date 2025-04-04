@@ -81,8 +81,6 @@ const Book3D = () => {
         <h3 className="text-[#25092e] text-2xl font-bold mb-2 text-center">RAKSHINDA</h3>
         <h3 className="text-[#25092e] text-2xl font-bold mb-8 text-center">JABEEN</h3>
         
-        <img src="/images/Cambridge_University_Logo.png" alt="Cambridge University" className="w-24 mb-4"/>
-        
         <div className="text-[#25092e] text-sm font-medium mb-4 text-center">
           <p className="mb-1">CELTA Certified</p>
           <p>English Teacher</p>

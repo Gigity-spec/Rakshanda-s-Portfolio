@@ -10,21 +10,21 @@ const educationItems = [
     title: "Masters in English Literature",
     year: "The University of Punjab, Pakistan (2000)",
     description: "With optional paper of ELT (English Language Teaching)",
-    logo: "/images/Punjab_University_Logo.svg",
+    logo: punjabLogo,
     alt: "University of Punjab Logo"
   },
   {
     title: "Bachelors in Arts and Humanities",
     year: "The University of Punjab, Pakistan (1997)",
     description: "Foundation in humanities and liberal arts education.",
-    logo: "/images/Punjab_University_Logo.svg",
+    logo: punjabLogo,
     alt: "University of Punjab Logo"
   },
   {
     title: "National Cadet Core Training",
     year: "1995",
     description: "Leadership and discipline training program.",
-    logo: "/images/NCC_Logo.svg",
+    logo: nccLogo,
     alt: "National Cadet Corps Logo"
   }
 ];
