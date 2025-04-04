@@ -70,7 +70,7 @@ const Book3D = () => {
 
       {/* Book cover */}
       <motion.div
-        className="w-[250px] h-[350px] bg-gradient-to-r from-[#f2c0DD] to-[#e5b3d1] rounded-r-sm p-6 flex flex-col justify-center items-center relative overflow-hidden"
+        className="w-[250px] h-[350px] bg-gradient-to-r from-[#f2c0DD] to-[#e5b3d1] rounded-r-sm p-6 flex flex-col justify-center items-center relative"
         style={{
           rotateY,
           rotateX,
@@ -78,37 +78,21 @@ const Book3D = () => {
           boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.2)"
         }}
       >
-        {/* Book pattern overlay */}
-        <div className="absolute inset-0 opacity-10 bg-grid-pattern"></div>
-
-        {/* Book title */}
-        <h3 className="text-[#25092e] text-2xl font-bold mb-2 text-center z-10 transform rotate-0">RAKSHINDA</h3>
-        <h3 className="text-[#25092e] text-2xl font-bold mb-8 text-center z-10 transform rotate-0">JABEEN</h3>
-
-        {/* Book subtitle */}
-        <div className="text-[#25092e] text-sm font-medium mb-4 text-center z-10">
+        <h3 className="text-[#25092e] text-2xl font-bold mb-2 text-center">RAKSHINDA</h3>
+        <h3 className="text-[#25092e] text-2xl font-bold mb-8 text-center">JABEEN</h3>
+        
+        <img src="/images/Cambridge_University_Logo.png" alt="Cambridge University" className="w-24 mb-4"/>
+        
+        <div className="text-[#25092e] text-sm font-medium mb-4 text-center">
           <p className="mb-1">CELTA Certified</p>
           <p>English Teacher</p>
         </div>
 
-        {/* Book decoration */}
         <div className="w-16 h-1 bg-[#A3886b] mb-4"></div>
-
-        {/* Year */}
         <p className="text-[#25092e] opacity-70 text-sm">2000 - 2023</p>
       </motion.div>
 
-      {/* Book pages */}
-      <motion.div
-        className="absolute w-[245px] h-[345px] bg-white rounded-r-sm transform origin-left"
-        style={{
-          rotateY: useTransform(rotateY, value => value + 3),
-          rotateX,
-          left: "40px",
-          zIndex: 0,
-          transformStyle: "preserve-3d"
-        }}
-      />
+      
     </motion.div>
   );
 };
