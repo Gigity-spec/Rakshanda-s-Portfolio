@@ -34,9 +34,9 @@ const CeltaCertification = () => {
           transition={{ duration: 0.5 }}
         >
           <img 
-            src="/images/Cambridge_University_Logo.png" 
+            src="/images/Cambridge_Professional_Logo.svg" 
             alt="Cambridge University Logo" 
-            className="w-32 h-32 object-contain"
+            className="w-48 h-48 object-contain"
           />
         </motion.div>
         

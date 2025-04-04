@@ -7,11 +7,11 @@ const Book3D = () => {
   const rotateY = useMotionValue(0);
   const rotateX = useMotionValue(0);
   const bookRef = useRef<HTMLDivElement>(null);
-  
+
   // Transform values for 3D shadows and perspective
   const shadowBlur = useTransform(rotateY, [-20, 0, 20], [8, 16, 8]);
   const shadowOpacity = useTransform(rotateY, [-20, 0, 20], [0.3, 0.2, 0.3]);
-  
+
   useEffect(() => {
     // Animate the book slightly to show the 3D effect
     const animateBook = async () => {
@@ -19,32 +19,32 @@ const Book3D = () => {
       await animate(rotateY, -10, { duration: 1.5, ease: "easeInOut" });
       await animate(rotateY, 0, { duration: 1, ease: "easeInOut" });
     };
-    
+
     animateBook();
-    
+
     // Mouse move effect for interactive 3D rotation
     const handleMouseMove = (e: MouseEvent) => {
       if (!bookRef.current) return;
-      
+
       const rect = bookRef.current.getBoundingClientRect();
       const centerX = rect.left + rect.width / 2;
       const centerY = rect.top + rect.height / 2;
-      
+
       // Calculate rotation based on mouse position
       const rotX = ((e.clientY - centerY) / (rect.height / 2)) * -8;
       const rotY = ((e.clientX - centerX) / (rect.width / 2)) * 8;
-      
+
       rotateX.set(rotX);
       rotateY.set(rotY);
     };
-    
+
     window.addEventListener('mousemove', handleMouseMove);
-    
+
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
   }, [rotateX, rotateY]);
-  
+
   return (
     <motion.div 
       ref={bookRef}
@@ -67,7 +67,7 @@ const Book3D = () => {
           )
         }}
       />
-      
+
       {/* Book cover */}
       <motion.div
         className="w-[250px] h-[350px] bg-gradient-to-r from-[#f2c0DD] to-[#e5b3d1] rounded-r-sm p-6 flex flex-col justify-center items-center relative overflow-hidden"
@@ -80,24 +80,24 @@ const Book3D = () => {
       >
         {/* Book pattern overlay */}
         <div className="absolute inset-0 opacity-10 bg-grid-pattern"></div>
-        
+
         {/* Book title */}
         <h3 className="text-[#25092e] text-2xl font-bold mb-2 text-center z-10 transform rotate-0">RAKSHINDA</h3>
         <h3 className="text-[#25092e] text-2xl font-bold mb-8 text-center z-10 transform rotate-0">JABEEN</h3>
-        
+
         {/* Book subtitle */}
         <div className="text-[#25092e] text-sm font-medium mb-4 text-center z-10">
           <p className="mb-1">CELTA Certified</p>
           <p>English Teacher</p>
         </div>
-        
+
         {/* Book decoration */}
         <div className="w-16 h-1 bg-[#A3886b] mb-4"></div>
-        
+
         {/* Year */}
         <p className="text-[#25092e] opacity-70 text-sm">2000 - 2023</p>
       </motion.div>
-      
+
       {/* Book pages */}
       <motion.div
         className="absolute w-[245px] h-[345px] bg-white rounded-r-sm transform origin-left"
@@ -129,7 +129,7 @@ const Hero = () => {
               Over 20+ years of experience in English language instruction and academia. 
               Specializing in EFL teaching, curriculum design, and literature studies.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4">
               <a 
                 href="#contact" 
@@ -145,7 +145,7 @@ const Hero = () => {
               </a>
             </div>
           </motion.div>
-          
+
           <motion.div 
             className="relative"
             initial={{ opacity: 0, scale: 0.95 }}
