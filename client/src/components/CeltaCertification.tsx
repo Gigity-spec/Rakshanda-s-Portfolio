@@ -83,13 +83,15 @@ const CeltaCertification = () => {
                 <p className="text-[#25092e] text-sm opacity-70 mb-6">Certificate in Teaching English to Speakers of Other Languages</p>
                 
                 <a 
-                  href="#download-certificate" 
+                  href="/documents/celta-certificate.pdf" 
+                  target="_blank"
+                  rel="noreferrer"
+                  download="Rakhshinda-Jabeen-CELTA-Certificate.pdf"
                   className="inline-flex items-center bg-[#2176FF] text-white py-3 px-4 rounded-md shadow-md hover:bg-opacity-90 transition-all duration-200 w-[250px] justify-center"
-                  aria-label="Download CELTA Certificate PDF, file size 2.8MB"
+                  aria-label="Download CELTA Certificate PDF"
                 >
                   <i className="fas fa-file-pdf mr-2"></i>
                   <span>Download Certificate</span>
-                  <span className="text-xs ml-2 opacity-80">(2.8MB)</span>
                 </a>
               </div>
             </animated.div>

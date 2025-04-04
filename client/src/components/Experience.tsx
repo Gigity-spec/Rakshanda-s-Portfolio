@@ -70,7 +70,21 @@ const Experience = () => {
                     <h3 className="font-bold text-xl text-[#A3886b]">{item.institution}</h3>
                     <p className="text-[#25092e] opacity-80">{item.period}</p>
                     <p className="mt-2 text-[#25092e]">{item.position}</p>
-                    <p className="mt-2 text-sm text-[#25092e] opacity-70">{item.location}</p>
+                    <p className="mt-2 text-sm text-[#25092e] opacity-70 mb-4">{item.location}</p>
+                    
+                    {item.institution === "King Khalid University" && (
+                      <a 
+                        href="/documents/king-khalid-experience.pdf" 
+                        target="_blank"
+                        rel="noreferrer"
+                        download="Rakhshinda-Jabeen-KKU-Experience.pdf"
+                        className="inline-flex items-center text-[#2176FF] hover:text-[#A3886b] transition-colors duration-300 text-sm"
+                        aria-label="Download King Khalid University Experience Certificate"
+                      >
+                        <i className="fas fa-file-pdf mr-1"></i>
+                        <span>Download Experience Certificate</span>
+                      </a>
+                    )}
                   </div>
                 </div>
                 
