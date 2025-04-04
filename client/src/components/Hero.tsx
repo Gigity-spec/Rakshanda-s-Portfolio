@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
   return (
-    <section id="home" className="pt-28 pb-16 lg:pt-32 lg:pb-20 section-gradient">
+    <section id="home" className="pt-28 pb-16 lg:pt-32 lg:pb-20 hero-gradient">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div

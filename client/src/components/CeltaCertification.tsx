@@ -23,7 +23,7 @@ const CeltaCertification = () => {
     `perspective(800px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
   return (
-    <section id="celta" className="py-16 lg:py-20 bg-white">
+    <section id="celta" className="py-16 lg:py-20 celta-section">
       <div className="container mx-auto px-4">
         <motion.h1 
           className="font-soria text-3xl lg:text-4xl text-[#A3886b] text-center mb-6"

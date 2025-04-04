@@ -22,6 +22,18 @@ const websiteContent = {
     "Certificate in Teaching English to Speakers of Other Languages (CELTA)",
     "Post Graduate Certificate in Education (PGCE)"
   ],
+  celta: {
+    name: "Cambridge CELTA (Certificate in Teaching English to Speakers of Other Languages)",
+    institution: "Cambridge University",
+    description: "The Cambridge CELTA certification represents the gold standard in English language teaching qualifications. This internationally recognized credential demonstrates expertise in teaching methodologies, classroom management, and student assessment techniques for adult learners.",
+    qualifications: [
+      "Teaching Methodologies - Expert knowledge of communicative language teaching and student-centered approaches",
+      "Lesson Planning - Comprehensive skills in creating effective, engaging lesson plans for various language proficiency levels",
+      "Classroom Management - Advanced techniques for creating positive, productive learning environments",
+      "Student Assessment - Thorough understanding of formative and summative assessment strategies",
+      "International Recognition - Globally respected qualification accepted by institutions worldwide"
+    ]
+  },
   publications: [
     "Probing the Approaches to Teaching Literature to EFL Students (Featured Research Paper, DOI: 10.7575/aiac.ijels.v.3n.2p.15)",
     "Stylistic Analysis of The Road Not Taken by Robert Frost",
@@ -38,7 +50,12 @@ const websiteContent = {
     "King Khalid University - Assistant Professor (2015-Present)",
     "Higher Education Commission - English Language Specialist (2010-2015)",
     "International School of Languages - Senior English Teacher (2005-2010)"
-  ]
+  ],
+  contactInfo: {
+    email: "rwahla7@gmail.com",
+    whatsapp: "+966 55 920 1358",
+    linkedin: "https://www.linkedin.com/in/rakhshinda-jabeen-4abb4235/"
+  }
 };
 
 type Message = {
@@ -85,6 +102,13 @@ const Chatbot = () => {
   };
 
   const generateResponse = (query: string): string => {
+    // CELTA specific questions
+    if (query.includes('celta') || 
+        (query.includes('teaching') && query.includes('certificate')) || 
+        (query.includes('english') && query.includes('certificate'))) {
+      return `${websiteContent.celta.name} from ${websiteContent.celta.institution}\n\n${websiteContent.celta.description}\n\nKey qualifications gained through CELTA:\n\n• ${websiteContent.celta.qualifications.join('\n• ')}`;
+    }
+    
     // Experience-related questions
     if (query.includes('experience') || query.includes('work history') || query.includes('background') || query.includes('job')) {
       return `${websiteContent.name} has ${websiteContent.experience} Her work history includes:\n\n${websiteContent.workHistory.join('\n')}`;
@@ -105,18 +129,23 @@ const Chatbot = () => {
       return `${websiteContent.name} has several notable publications, including:\n\n• ${websiteContent.publications.join('\n• ')}`;
     }
     
-    // Certification-related questions
-    if (query.includes('certification') || query.includes('certificate') || query.includes('celta') || query.includes('qualified')) {
-      return `${websiteContent.name} holds the following certifications:\n\n• ${websiteContent.certifications.join('\n• ')}`;
+    // General certification-related questions
+    if (query.includes('certification') || query.includes('certificate') || query.includes('qualified')) {
+      return `${websiteContent.name} holds the following certifications:\n\n• ${websiteContent.certifications.join('\n• ')}\n\nThe CELTA certification is particularly notable as it's the gold standard for English language teaching worldwide.`;
+    }
+    
+    // Contact information questions
+    if (query.includes('contact') || query.includes('email') || query.includes('phone') || query.includes('whatsapp') || query.includes('reach') || query.includes('message')) {
+      return `You can contact ${websiteContent.name} through:\n\n• Email: ${websiteContent.contactInfo.email}\n• WhatsApp: ${websiteContent.contactInfo.whatsapp}\n• LinkedIn: ${websiteContent.contactInfo.linkedin}`;
     }
     
     // About/Introduction questions
-    if (query.includes('who is') || query.includes('about') || query.includes('tell me about') || query.includes('introduction')) {
-      return `${websiteContent.name} is a ${websiteContent.title} with ${websiteContent.experience}`;
+    if (query.includes('who is') || query.includes('about') || query.includes('tell me about') || query.includes('introduction') || query.includes('hi') || query.includes('hello')) {
+      return `${websiteContent.name} is a ${websiteContent.title} with ${websiteContent.experience} She has worked at prestigious institutions including King Khalid University where she currently serves as an Assistant Professor.`;
     }
     
     // Default response for unrecognized questions
-    return `I'm sorry, I don't have specific information about that. ${websiteContent.name} is a ${websiteContent.title} with ${websiteContent.experience} Would you like to know about her experience, skills, education, publications, or certifications?`;
+    return `I'm sorry, I don't have specific information about that. ${websiteContent.name} is a ${websiteContent.title} with ${websiteContent.experience} Would you like to know about her experience, skills, education, publications, or certifications? You can also ask about her CELTA qualification specifically.`;
   };
 
   return (
