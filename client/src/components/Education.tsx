@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 const educationItems = [
   {
     title: "CELTA Certification",
-    year: "2025",
+    year: "2019",
     description: "Professional teaching certificate for English language instruction.",
-    logo: "/images/CELTA_Logo.svg",
-    alt: "Cambridge CELTA Logo"
+    logo: "/images/Cambridge_University_Logo.png",
+    alt: "Cambridge University Logo"
   },
   {
     title: "Masters in English Literature",
@@ -37,8 +37,8 @@ const professionalDevelopmentItems = [
     year: "February 16, 2020",
     description: "Training session on Academic Writing and Oracy in Abha",
     type: "workshop",
-    logo: "/images/Cambridge_Professional_Logo.svg",
-    alt: "Cambridge Professional Learning Logo"
+    logo: "/images/Cambridge_University_Logo.png",
+    alt: "Cambridge University Logo"
   },
   {
     title: "Making English Language Literacy Accessible for students",
@@ -61,16 +61,16 @@ const professionalDevelopmentItems = [
     year: "January 13, 2019",
     description: "Professional training conducted by Claire Hattle at King Khalid University, Abha",
     type: "training",
-    logo: "/images/Cambridge_Professional_Logo.svg",
-    alt: "Cambridge Professional Learning Logo"
+    logo: "/images/Cambridge_University_Logo.png",
+    alt: "Cambridge University Logo"
   },
   {
     title: "Digital Experience 2022",
     year: "February 23, 2022",
     description: "Cambridge Assessment English webinar on transforming teaching using Cambridge One and Blackboard",
     type: "webinar",
-    logo: "/images/Cambridge_Professional_Logo.svg",
-    alt: "Cambridge Professional Learning Logo"
+    logo: "/images/Cambridge_University_Logo.png",
+    alt: "Cambridge University Logo"
   },
   {
     title: "Blackboard Courses",

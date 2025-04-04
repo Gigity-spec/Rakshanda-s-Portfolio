@@ -25,6 +25,20 @@ const CeltaCertification = () => {
   return (
     <section id="celta" className="py-16 lg:py-20 celta-section">
       <div className="container mx-auto px-4">
+        <motion.div
+          className="flex justify-center mb-6"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <img 
+            src="/images/Cambridge_University_Logo.png" 
+            alt="Cambridge University Logo" 
+            className="w-32 h-32 object-contain"
+          />
+        </motion.div>
+        
         <motion.h1 
           className="font-soria text-3xl lg:text-4xl text-[#A3886b] text-center mb-6"
           initial={{ opacity: 0, y: 20 }}
@@ -34,7 +48,7 @@ const CeltaCertification = () => {
           role="heading" 
           aria-level={1}
         >
-          CELTA Certification
+          Cambridge Certificate in Teaching English
         </motion.h1>
         
         <motion.h2 
@@ -46,7 +60,7 @@ const CeltaCertification = () => {
           role="heading"
           aria-level={2}
         >
-          Cambridge CELTA - Certificate in English Language Teaching to Adults
+          To Speakers of Other Languages (CELTA)
         </motion.h2>
         
         <div className="flex flex-col lg:flex-row gap-10 max-w-5xl mx-auto">
