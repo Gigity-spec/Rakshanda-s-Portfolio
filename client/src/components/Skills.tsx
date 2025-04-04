@@ -102,7 +102,7 @@ const Skills = () => {
         </motion.h2>
         
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto auto-rows-fr"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -118,7 +118,7 @@ const Skills = () => {
               threshold={0.1}
             >
               <div 
-                className="bg-white rounded-xl shadow-md p-6 gradient-border hover-grow h-full flex flex-col"
+                className="bg-white rounded-xl shadow-md p-6 gradient-border hover-grow h-full flex flex-col min-h-[420px] justify-between"
               >
                 <h3 className="font-semibold text-xl text-[#A3886b] mb-4 flex items-center">
                   <i className={`${category.icon} text-[#f2c0DD] mr-3`}></i>
