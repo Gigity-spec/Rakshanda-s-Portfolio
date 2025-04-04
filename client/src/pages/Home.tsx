@@ -6,6 +6,7 @@ import Publications from '@/components/Publications';
 import Skills from '@/components/Skills';
 import Education from '@/components/Education';
 import CeltaCertification from '@/components/CeltaCertification';
+import Testimonials from '@/components/Testimonials';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import Chatbot from '@/components/Chatbot';
@@ -21,9 +22,10 @@ const Home = () => {
       <Hero />
       <Experience />
       <CeltaCertification />
+      <Education />
+      <Testimonials />
       <Publications />
       <Skills />
-      <Education />
       <Contact />
       <Footer />
       <Chatbot />

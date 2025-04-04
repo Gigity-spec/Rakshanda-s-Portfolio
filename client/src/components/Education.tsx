@@ -45,7 +45,7 @@ const professionalDevelopmentItems = [
     year: "November 30, 2019",
     description: "Training session by Dr. Eli Ghazele in Abha",
     type: "workshop",
-    logo: "/images/KKU_Logo.svg",
+    logo: "/images/King_Khalid_University_Logo.png",
     alt: "King Khalid University Logo"
   },
   {
@@ -53,7 +53,7 @@ const professionalDevelopmentItems = [
     year: "2019",
     description: "Two-week online course by King Khalid University, Saudi Arabia",
     type: "online",
-    logo: "/images/KKU_Logo.svg",
+    logo: "/images/King_Khalid_University_Logo.png",
     alt: "King Khalid University Logo"
   },
   {
@@ -77,7 +77,7 @@ const professionalDevelopmentItems = [
     year: "2019-2022",
     description: "Online courses in Illuminate Live, Blackboard testing, and Blackboard ultra",
     type: "online",
-    logo: "/images/KKU_Logo.svg",
+    logo: "/images/King_Khalid_University_Logo.png",
     alt: "King Khalid University Logo"
   }
 ];
