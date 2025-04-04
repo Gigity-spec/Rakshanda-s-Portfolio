@@ -10,14 +10,14 @@ const educationItems = [
     title: "Masters in English Literature",
     year: "The University of Punjab, Pakistan (2000)",
     description: "With optional paper of ELT (English Language Teaching)",
-    logo: "/images/Punjab_University_Logo.png",
+    logo: punjabLogo,
     alt: "University of Punjab Logo"
   },
   {
     title: "Bachelors in Arts and Humanities",
     year: "The University of Punjab, Pakistan (1997)",
     description: "Foundation in humanities and liberal arts education.",
-    logo: "/images/Punjab_University_Logo.png",
+    logo: punjabLogo,
     alt: "University of Punjab Logo"
   },
   {
