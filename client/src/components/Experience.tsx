@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import ScrollAnimation from './3d-scroll-animation';
+import kkuLogo from '../assets/King_Khalid_University_Logo.png';
+import fatimaJinnahLogo from '../assets/Fatima_Jinnah_College_Logo.png';
 
 const experienceItems = [
   {
@@ -84,13 +86,13 @@ const Experience = () => {
                     <div className="flex flex-col items-center mb-4">
                       {item.institution === "King Khalid University" ? (
                         <img
-                          src="/images/King_Khalid_University_Logo.png"
+                          src={kkuLogo}
                           alt="King Khalid University Logo"
                           className="w-[180px] h-auto mb-4"
                         />
                       ) : (
                         <img
-                          src="/images/Fatima_Jinnah_College_Logo.png"
+                          src={fatimaJinnahLogo}
                           alt="Fatima Jinnah College Logo"
                           className="w-[180px] h-auto mb-4"
                         />
