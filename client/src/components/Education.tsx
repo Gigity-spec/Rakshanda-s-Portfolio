@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 // Import logos directly using relative paths
-import punjabLogo from '../assets/Punjab_University_Logo.png';
+import punjabLogo from '/images/Punjab_University_Logo.png';
 import nccLogo from '../assets/NCC_Logo.png';
 import cambridgeLogo from '../assets/Cambridge_University_Logo.png';
 import kkuLogo from '../assets/King_Khalid_University_Logo.png';
@@ -126,11 +126,17 @@ const Education = () => {
               className="bg-white rounded-xl shadow-lg overflow-hidden gradient-border hover-grow academic-card"
               variants={itemVariants}
             >
-              <div className="h-52 flex items-center justify-center bg-white">
+              <div className="h-52 flex items-center justify-center bg-white relative">
                 <img 
                   src={item.logo} 
                   alt={item.alt} 
-                  className="w-40 h-40 object-contain education-logo" 
+                  className="w-40 h-40 object-contain education-logo"
+                  onError={(e) => {
+                    const img = e.target as HTMLImageElement;
+                    if (!img.src.includes('/images/')) {
+                      img.src = `/images/${img.src.split('/').pop()}`;
+                    }
+                  }}
                 />
               </div>
               <div className="p-8">
