@@ -102,50 +102,68 @@ const Chatbot = () => {
   };
 
   const generateResponse = (query: string): string => {
+    // Simple greetings
+    if (/^(hi|hello|hey|greetings|good morning|good afternoon|good evening)$/i.test(query) || 
+        /^(hi|hello|hey) there$/i.test(query) || 
+        /^(hi|hello|hey)(\s|$)/i.test(query)) {
+      return `Hello! It's nice to meet you. I'm Rakshinda's virtual assistant. How can I help you today? Feel free to ask about her qualifications, experience, publications, or anything else you'd like to know.`;
+    }
+    
+    // "How are you" type questions
+    if (/how are you|how('s| is) it going|what's up/i.test(query)) {
+      return `I'm doing well, thank you for asking! I'm here to help you learn more about Rakshinda Jabeen. What would you like to know about her professional qualifications or experience?`;
+    }
+    
+    // Thank you responses
+    if (/thank(s| you)|appreciate it/i.test(query)) {
+      return `You're welcome! I'm happy to assist. Is there anything else you'd like to know about Rakshinda's qualifications or experience?`;
+    }
+    
     // CELTA specific questions
     if (query.includes('celta') || 
         (query.includes('teaching') && query.includes('certificate')) || 
-        (query.includes('english') && query.includes('certificate'))) {
-      return `${websiteContent.celta.name} from ${websiteContent.celta.institution}\n\n${websiteContent.celta.description}\n\nKey qualifications gained through CELTA:\n\n• ${websiteContent.celta.qualifications.join('\n• ')}`;
+        (query.includes('english') && query.includes('certificate')) ||
+        (query.includes('what') && query.includes('certification'))) {
+      return `${websiteContent.celta.name} from ${websiteContent.celta.institution}\n\n${websiteContent.celta.description}\n\nKey qualifications gained through CELTA:\n\n• ${websiteContent.celta.qualifications.join('\n• ')}\n\nThis certification is highly respected in the field of English language teaching. Would you like to know about Rakshinda's other qualifications as well?`;
     }
     
     // Experience-related questions
     if (query.includes('experience') || query.includes('work history') || query.includes('background') || query.includes('job')) {
-      return `${websiteContent.name} has ${websiteContent.experience} Her work history includes:\n\n${websiteContent.workHistory.join('\n')}`;
+      return `${websiteContent.name} has ${websiteContent.experience}\n\nHer professional journey includes:\n\n${websiteContent.workHistory.join('\n')}\n\nShe has a proven track record of excellence in teaching and curriculum development. Is there a specific aspect of her experience you're interested in?`;
     }
     
     // Skills-related questions
-    if (query.includes('skill') || query.includes('abilities') || query.includes('capable') || query.includes('can do')) {
-      return `${websiteContent.name}'s key skills include:\n\n• ${websiteContent.skills.join('\n• ')}`;
+    if (query.includes('skill') || query.includes('abilities') || query.includes('capable') || query.includes('can do') || query.includes('what can she do')) {
+      return `${websiteContent.name}'s key professional skills include:\n\n• ${websiteContent.skills.join('\n• ')}\n\nThese skills have been developed over her 20+ years in the field. Would you like more details about any specific skill area?`;
     }
     
     // Education-related questions
     if (query.includes('education') || query.includes('degree') || query.includes('qualification') || query.includes('study')) {
-      return `${websiteContent.name}'s educational background includes:\n\n• ${websiteContent.education.join('\n• ')}`;
+      return `${websiteContent.name}'s educational background includes:\n\n• ${websiteContent.education.join('\n• ')}\n\nHer strong academic foundation complements her extensive practical experience in the field. Would you like to know about her certifications as well?`;
     }
     
     // Publication-related questions
     if (query.includes('publication') || query.includes('research') || query.includes('paper') || query.includes('article') || query.includes('write')) {
-      return `${websiteContent.name} has several notable publications, including:\n\n• ${websiteContent.publications.join('\n• ')}`;
+      return `${websiteContent.name} has contributed significantly to the field through these publications:\n\n• ${websiteContent.publications.join('\n• ')}\n\nHer research demonstrates her expertise in English language teaching methodologies and literature analysis. Is there a particular publication you're interested in?`;
     }
     
     // General certification-related questions
     if (query.includes('certification') || query.includes('certificate') || query.includes('qualified')) {
-      return `${websiteContent.name} holds the following certifications:\n\n• ${websiteContent.certifications.join('\n• ')}\n\nThe CELTA certification is particularly notable as it's the gold standard for English language teaching worldwide.`;
+      return `${websiteContent.name} holds the following certifications:\n\n• ${websiteContent.certifications.join('\n• ')}\n\nThe CELTA certification is particularly notable as it's the gold standard for English language teaching worldwide. Would you like specific details about the CELTA certification?`;
     }
     
     // Contact information questions
     if (query.includes('contact') || query.includes('email') || query.includes('phone') || query.includes('whatsapp') || query.includes('reach') || query.includes('message')) {
-      return `You can contact ${websiteContent.name} through:\n\n• Email: ${websiteContent.contactInfo.email}\n• WhatsApp: ${websiteContent.contactInfo.whatsapp}\n• LinkedIn: ${websiteContent.contactInfo.linkedin}`;
+      return `You can contact ${websiteContent.name} through any of these channels:\n\n• Email: ${websiteContent.contactInfo.email}\n• WhatsApp: ${websiteContent.contactInfo.whatsapp}\n• LinkedIn: ${websiteContent.contactInfo.linkedin}\n\nShe typically responds within 1-2 business days. Is there something specific you'd like to discuss with her?`;
     }
     
     // About/Introduction questions
-    if (query.includes('who is') || query.includes('about') || query.includes('tell me about') || query.includes('introduction') || query.includes('hi') || query.includes('hello')) {
-      return `${websiteContent.name} is a ${websiteContent.title} with ${websiteContent.experience} She has worked at prestigious institutions including King Khalid University where she currently serves as an Assistant Professor.`;
+    if (query.includes('who is') || query.includes('about') || query.includes('tell me about') || query.includes('introduction')) {
+      return `${websiteContent.name} is a ${websiteContent.title} with ${websiteContent.experience}\n\nShe has worked at prestigious institutions including King Khalid University where she currently serves as an Assistant Professor. Her expertise spans curriculum development, literature instruction, and research methodology. What specific aspect of her background would you like to know more about?`;
     }
     
     // Default response for unrecognized questions
-    return `I'm sorry, I don't have specific information about that. ${websiteContent.name} is a ${websiteContent.title} with ${websiteContent.experience} Would you like to know about her experience, skills, education, publications, or certifications? You can also ask about her CELTA qualification specifically.`;
+    return `Thank you for your question. While I don't have specific information about that, I'd be happy to tell you about ${websiteContent.name}'s qualifications as a ${websiteContent.title}.\n\nShe has ${websiteContent.experience} and is CELTA certified from Cambridge University. Would you like to know about her experience, skills, education, publications, or professional certifications? I'm here to help with any specific information you need.`;
   };
 
   return (
