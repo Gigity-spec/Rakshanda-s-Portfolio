@@ -2,13 +2,6 @@ import { motion } from 'framer-motion';
 
 const educationItems = [
   {
-    title: "CELTA Certification",
-    year: "2019",
-    description: "Professional teaching certificate for English language instruction.",
-    logo: "/images/Cambridge_University_Logo.png",
-    alt: "Cambridge University Logo"
-  },
-  {
     title: "Masters in English Literature",
     year: "The University of Punjab, Pakistan (2000)",
     description: "With optional paper of ELT (English Language Teaching)",
@@ -103,18 +96,8 @@ const Education = () => {
   };
   
   return (
-    <section id="education" className="py-16 lg:py-20 bg-white">
+    <section id="education" className="py-6 lg:py-10 bg-white">
       <div className="container mx-auto px-4">
-        <motion.h2 
-          className="font-soria text-3xl lg:text-4xl text-[#A3886b] text-center mb-6"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          Education & Professional Development
-        </motion.h2>
-        
         <motion.h3 
           className="text-xl text-[#25092e] text-center mb-10"
           initial={{ opacity: 0, y: 20 }}

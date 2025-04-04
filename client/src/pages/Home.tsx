@@ -21,8 +21,13 @@ const Home = () => {
       <Header />
       <Hero />
       <Experience />
-      <CeltaCertification />
-      <Education />
+      <div id="education-section">
+        <h2 className="font-soria text-3xl lg:text-4xl text-[#A3886b] text-center mb-6 pt-16">
+          Education & Professional Development
+        </h2>
+        <CeltaCertification />
+        <Education />
+      </div>
       <Testimonials />
       <Publications />
       <Skills />

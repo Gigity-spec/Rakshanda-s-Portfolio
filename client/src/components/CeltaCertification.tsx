@@ -23,7 +23,7 @@ const CeltaCertification = () => {
     `perspective(800px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
   return (
-    <section id="celta" className="py-16 lg:py-20 celta-section">
+    <section id="celta" className="py-8 lg:py-12 celta-section">
       <div className="container mx-auto px-4">
         <motion.div
           className="flex justify-center mb-6"
@@ -39,17 +39,17 @@ const CeltaCertification = () => {
           />
         </motion.div>
         
-        <motion.h1 
-          className="font-soria text-3xl lg:text-4xl text-[#A3886b] text-center mb-6"
+        <motion.h3 
+          className="font-soria text-2xl lg:text-3xl text-[#A3886b] text-center mb-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           role="heading" 
-          aria-level={1}
+          aria-level={3}
         >
           Cambridge Certificate in Teaching English
-        </motion.h1>
+        </motion.h3>
         
         <motion.h2 
           className="text-xl text-[#25092e] text-center mb-12"
