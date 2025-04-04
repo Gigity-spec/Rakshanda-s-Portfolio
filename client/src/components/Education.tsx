@@ -101,20 +101,20 @@ const Education = () => {
   };
   
   return (
-    <section id="education" className="py-6 lg:py-10 bg-white">
+    <section id="education" className="py-10 lg:py-16 bg-white">
       <div className="container mx-auto px-4">
-        <motion.h3 
-          className="text-2xl text-[#A3886b] text-center mb-12 font-semibold"
+        <motion.h2 
+          className="text-3xl lg:text-4xl text-[#A3886b] text-center mb-16 font-soria"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           Academic Qualifications
-        </motion.h3>
+        </motion.h2>
         
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-24"
+          className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto mb-32"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
