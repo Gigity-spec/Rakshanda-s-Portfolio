@@ -26,7 +26,7 @@ const Footer = () => {
           
           <div className="flex space-x-6">
             <a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/in/rakhshinda-jabeen-4abb4235/" 
               target="_blank" 
               rel="noreferrer" 
               className="text-white opacity-70 hover:opacity-100 transition-opacity duration-300"
@@ -35,22 +35,20 @@ const Footer = () => {
               <i className="fab fa-linkedin-in"></i>
             </a>
             <a 
-              href="https://researchgate.net" 
-              target="_blank" 
-              rel="noreferrer" 
+              href="mailto:rwahla7@gmail.com" 
               className="text-white opacity-70 hover:opacity-100 transition-opacity duration-300"
-              aria-label="View Rakshinda's ResearchGate profile"
+              aria-label="Email Rakshinda"
             >
-              <i className="fab fa-researchgate"></i>
+              <i className="fas fa-envelope"></i>
             </a>
             <a 
-              href="https://monumental-swan-60f559.netlify.app" 
+              href="https://wa.me/966559201358" 
               target="_blank" 
               rel="noreferrer" 
               className="text-white opacity-70 hover:opacity-100 transition-opacity duration-300"
-              aria-label="Visit Rakshinda's Original Website"
+              aria-label="Message Rakshinda on WhatsApp"
             >
-              <i className="fas fa-external-link-alt"></i>
+              <i className="fab fa-whatsapp"></i>
             </a>
           </div>
         </div>

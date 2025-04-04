@@ -312,14 +312,30 @@ const Contact = () => {
                 <div className="pt-6">
                   <h4 className="font-medium text-[#25092e] mb-3">Connect with me</h4>
                   <div className="flex space-x-4">
-                    <a href="#" className="bg-[#f2c0DD] bg-opacity-20 hover:bg-opacity-30 rounded-full w-10 h-10 flex items-center justify-center transition-all duration-300">
-                      <i className="fab fa-linkedin-in text-[#f2c0DD]"></i>
+                    <a 
+                      href="https://www.linkedin.com/in/rakhshinda-jabeen-4abb4235/" 
+                      target="_blank" 
+                      rel="noreferrer"
+                      className="bg-[#0A66C2] text-white hover:bg-opacity-90 rounded-full w-10 h-10 flex items-center justify-center transition-all duration-300"
+                      aria-label="LinkedIn Profile"
+                    >
+                      <i className="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="#" className="bg-[#f2c0DD] bg-opacity-20 hover:bg-opacity-30 rounded-full w-10 h-10 flex items-center justify-center transition-all duration-300">
-                      <i className="fab fa-twitter text-[#f2c0DD]"></i>
+                    <a 
+                      href="mailto:rwahla7@gmail.com" 
+                      className="bg-[#EA4335] text-white hover:bg-opacity-90 rounded-full w-10 h-10 flex items-center justify-center transition-all duration-300"
+                      aria-label="Email"
+                    >
+                      <i className="fas fa-envelope"></i>
                     </a>
-                    <a href="#" className="bg-[#f2c0DD] bg-opacity-20 hover:bg-opacity-30 rounded-full w-10 h-10 flex items-center justify-center transition-all duration-300">
-                      <i className="fab fa-researchgate text-[#f2c0DD]"></i>
+                    <a 
+                      href="https://wa.me/966559201358" 
+                      target="_blank" 
+                      rel="noreferrer"
+                      className="bg-[#25D366] text-white hover:bg-opacity-90 rounded-full w-10 h-10 flex items-center justify-center transition-all duration-300"
+                      aria-label="WhatsApp"
+                    >
+                      <i className="fab fa-whatsapp"></i>
                     </a>
                   </div>
                 </div>

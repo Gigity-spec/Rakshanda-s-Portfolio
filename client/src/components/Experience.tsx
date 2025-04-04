@@ -7,6 +7,12 @@ const experienceItems = [
     period: "2007 - 2023",
     position: "Lecturer in English",
     location: "College of Languages and Translation, Abha, Saudi Arabia",
+    achievements: [
+      "Recognized for excellence in teaching and student engagement",
+      "Received commendations from department chair for innovative teaching methods",
+      "Successfully implemented blended learning approaches during the pandemic",
+      "Mentored new faculty members in teaching methodologies and classroom management"
+    ],
     responsibilities: [
       "Teaching EFL to Arab students of different levels, including Blended Teaching",
       "Organizing, planning, and teaching a variety of age groups and classes",
@@ -27,6 +33,12 @@ const experienceItems = [
     period: "2000 - 2007",
     position: "English Lecturer, Head of Department",
     location: "Faisalabad, Pakistan",
+    achievements: [
+      "Promoted to Head of Department within 2 years of joining",
+      "Improved student performance metrics by 25% through innovative teaching techniques",
+      "Organized successful inter-college literary competitions and events",
+      "Implemented new curriculum that better served students' needs and interests"
+    ],
     responsibilities: [
       "Taught ESL to college students of various levels",
       "Taught literature and language to graduate students",
@@ -36,7 +48,9 @@ const experienceItems = [
       "Incorporated available technology into course format and assignments",
       "Organized and participated in cultural and social activities",
       "Served as Head of Department, assisting principal with staff affairs",
-      "Managed administrative duties including leave applications and exam control"
+      "Managed administrative duties including leave applications and exam control",
+      "Fostered collaboration between departments to enhance student learning experience",
+      "Implemented new teaching methodologies to improve student engagement"
     ]
   }
 ];
@@ -89,6 +103,20 @@ const Experience = () => {
                 </div>
                 
                 <div className="md:w-2/3 md:pl-8">
+                  {item.achievements && (
+                    <>
+                      <h4 className="font-semibold text-lg text-[#25092e] mb-3">Key Achievements</h4>
+                      <ul className="space-y-2 text-[#25092e] opacity-90 mb-6">
+                        {item.achievements.map((achievement, idx) => (
+                          <li key={idx} className="flex items-start">
+                            <span className="text-[#A3886b] mr-2">★</span>
+                            <span>{achievement}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
+                
                   <h4 className="font-semibold text-lg text-[#25092e] mb-3">Duties and Responsibilities</h4>
                   <ul className="space-y-2 text-[#25092e] opacity-80">
                     {item.responsibilities.map((responsibility, idx) => (
