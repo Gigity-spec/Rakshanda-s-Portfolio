@@ -101,20 +101,20 @@ const Education = () => {
   };
   
   return (
-    <section id="education" className="py-10 lg:py-16 bg-white">
+    <section id="education" className="py-6 lg:py-10 bg-white">
       <div className="container mx-auto px-4">
-        <motion.h2 
-          className="text-3xl lg:text-4xl text-[#A3886b] text-center mb-16 font-soria"
+        <motion.h3 
+          className="text-2xl text-[#A3886b] text-center mb-12 font-semibold"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           Academic Qualifications
-        </motion.h2>
+        </motion.h3>
         
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto mb-32"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-24"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -126,17 +126,11 @@ const Education = () => {
               className="bg-white rounded-xl shadow-lg overflow-hidden gradient-border hover-grow academic-card"
               variants={itemVariants}
             >
-              <div className="h-52 flex items-center justify-center bg-white relative">
+              <div className="h-52 flex items-center justify-center bg-white">
                 <img 
                   src={item.logo} 
                   alt={item.alt} 
-                  className="w-40 h-40 object-contain education-logo"
-                  onError={(e) => {
-                    const img = e.target as HTMLImageElement;
-                    if (!img.src.includes('/images/')) {
-                      img.src = `/images/${img.src.split('/').pop()}`;
-                    }
-                  }}
+                  className="w-40 h-40 object-contain education-logo" 
                 />
               </div>
               <div className="p-8">
