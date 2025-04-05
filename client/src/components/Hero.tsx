@@ -1,19 +1,14 @@
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 
-// 3D Book Component
 const Book3D = () => {
-  // Motion values for 3D effect
   const rotateY = useMotionValue(0);
   const rotateX = useMotionValue(0);
   const bookRef = useRef<HTMLDivElement>(null);
-
-  // Transform values for 3D shadows and perspective
   const shadowBlur = useTransform(rotateY, [-20, 0, 20], [8, 16, 8]);
   const shadowOpacity = useTransform(rotateY, [-20, 0, 20], [0.3, 0.2, 0.3]);
 
   useEffect(() => {
-    // Animate the book slightly to show the 3D effect
     const animateBook = async () => {
       await animate(rotateY, 10, { duration: 1.5, ease: "easeInOut" });
       await animate(rotateY, -10, { duration: 1.5, ease: "easeInOut" });
@@ -22,15 +17,12 @@ const Book3D = () => {
 
     animateBook();
 
-    // Mouse move effect for interactive 3D rotation
     const handleMouseMove = (e: MouseEvent) => {
       if (!bookRef.current) return;
 
       const rect = bookRef.current.getBoundingClientRect();
       const centerX = rect.left + rect.width / 2;
       const centerY = rect.top + rect.height / 2;
-
-      // Calculate rotation based on mouse position
       const rotX = ((e.clientY - centerY) / (rect.height / 2)) * -8;
       const rotY = ((e.clientX - centerX) / (rect.width / 2)) * 8;
 
@@ -39,21 +31,15 @@ const Book3D = () => {
     };
 
     window.addEventListener('mousemove', handleMouseMove);
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
+    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, [rotateX, rotateY]);
 
   return (
     <motion.div 
       ref={bookRef}
       className="w-full h-[400px] relative perspective-800 flex items-center justify-center"
-      style={{
-        perspective: "800px"
-      }}
+      style={{ perspective: "800px" }}
     >
-      {/* Book spine */}
       <motion.div
         className="absolute w-[40px] h-[350px] bg-gradient-to-r from-[#A3886b] to-[#8a725d] rounded-l-sm transform origin-right"
         style={{
@@ -61,14 +47,10 @@ const Book3D = () => {
           rotateX,
           zIndex: 1,
           transformStyle: "preserve-3d",
-          boxShadow: useTransform(
-            shadowBlur,
-            blur => `0px 0px ${blur}px rgba(0, 0, 0, 0.5)`
-          )
+          boxShadow: useTransform(shadowBlur, blur => `0px 0px ${blur}px rgba(0, 0, 0, 0.5)`)
         }}
       />
 
-      {/* Book cover */}
       <motion.div
         className="w-[250px] h-[350px] bg-gradient-to-r from-[#f2c0DD] to-[#e5b3d1] rounded-r-sm p-6 flex flex-col justify-center items-center relative"
         style={{
@@ -80,7 +62,7 @@ const Book3D = () => {
       >
         <h3 className="text-[#25092e] text-2xl font-bold mb-2 text-center">RAKSHINDA</h3>
         <h3 className="text-[#25092e] text-2xl font-bold mb-8 text-center">JABEEN</h3>
-        
+
         <div className="text-[#25092e] text-sm font-medium mb-4 text-center">
           <p className="mb-1">CELTA Certified</p>
           <p>English Teacher</p>
@@ -89,8 +71,6 @@ const Book3D = () => {
         <div className="w-16 h-1 bg-[#A3886b] mb-4"></div>
         <p className="text-[#25092e] opacity-70 text-sm">2000 - 2023</p>
       </motion.div>
-
-      
     </motion.div>
   );
 };
