@@ -3,14 +3,14 @@ import ScrollAnimation from './3d-scroll-animation';
 
 const skillCategories = [
   {
-    title: "Teaching Skills",
+    title: "Core Teaching Skills",
     icon: "fas fa-chalkboard-teacher",
     skills: [
-      { name: "Curriculum Design", level: "Expert", percentage: 95 },
+      { name: "EFL/ESL Instruction", level: "Expert", percentage: 95 },
+      { name: "Teaching Methodology", level: "Expert", percentage: 92 },
       { name: "Classroom Management", level: "Expert", percentage: 95 },
       { name: "Lesson Planning", level: "Expert", percentage: 90 },
-      { name: "Teaching Methodology", level: "Expert", percentage: 92 },
-      { name: "EFL/ESL Instruction", level: "Expert", percentage: 95 },
+      { name: "Curriculum Design", level: "Expert", percentage: 95 },
       { name: "Literature Analysis", level: "Expert", percentage: 94 }
     ]
   },
@@ -118,7 +118,7 @@ const Skills = () => {
               threshold={0.1}
             >
               <div 
-                className="bg-white rounded-xl shadow-md p-4 gradient-border hover-grow h-full flex flex-col"
+                className="bg-white rounded-xl shadow-md p-3 gradient-border hover-grow h-full flex flex-col"
               >
                 <h3 className="font-semibold text-xl text-[#A3886b] mb-4 flex items-center">
                   <div className="w-8 h-8 bg-[#f2c0DD] bg-opacity-20 rounded-lg flex items-center justify-center mr-3">
