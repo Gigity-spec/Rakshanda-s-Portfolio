@@ -74,17 +74,23 @@ const Skills = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
+        staggerChildren: 0.05,
+        type: "tween",
+        ease: "easeOut"
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 10 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5 }
+      transition: { 
+        duration: 0.3,
+        type: "tween",
+        ease: "easeOut"
+      }
     }
   };
 

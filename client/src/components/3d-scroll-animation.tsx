@@ -31,7 +31,7 @@ export const ScrollAnimation = ({
     left: [25, 0],
     right: [-25, 0],
   };
-  
+
   const yValues = {
     up: [25, 0],
     down: [-25, 0],
@@ -54,6 +54,7 @@ export const ScrollAnimation = ({
           rotate,
           scale: scaleValue,
           opacity,
+          willChange: "transform",
         }}
       >
         {children}
