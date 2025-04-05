@@ -118,37 +118,39 @@ const Skills = () => {
               threshold={0.1}
             >
               <div 
-                className="bg-white rounded-xl shadow-md p-6 gradient-border hover-grow h-full flex flex-col min-h-[280px] justify-between"
+                className="bg-white rounded-xl shadow-md p-8 gradient-border hover-grow h-full flex flex-col min-h-[320px] justify-between"
               >
-                <h3 className="font-semibold text-xl text-[#A3886b] mb-3 flex items-center">
-                  <i className={`${category.icon} text-[#f2c0DD] mr-3`}></i>
+                <h3 className="font-semibold text-xl text-[#A3886b] mb-6 flex items-center">
+                  <div className="w-10 h-10 bg-[#f2c0DD] bg-opacity-20 rounded-lg flex items-center justify-center mr-4">
+                    <i className={`${category.icon} text-[#f2c0DD] text-xl`}></i>
+                  </div>
                   {category.title}
                 </h3>
                 
-                <div className="space-y-2">
+                <div className="space-y-4">
                   {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex}>
-                      <div className="flex justify-between mb-1">
-                        <span className="text-sm font-medium text-[#25092e]">{skill.name}</span>
-                        <span className="text-sm font-medium text-[#f2c0DD]">{skill.level}</span>
+                    <div key={skillIndex} className="bg-gray-50 rounded-lg p-4">
+                      <div className="flex justify-between mb-3">
+                        <span className="text-sm font-semibold text-[#25092e]">{skill.name}</span>
+                        <span className="text-sm font-medium text-[#f2c0DD] bg-[#f2c0DD] bg-opacity-10 px-3 py-1 rounded-full">{skill.level}</span>
                       </div>
-                      <div className="w-full h-3 flex items-center gap-1">
+                      <div className="w-full h-2 flex items-center gap-1.5">
                         {[...Array(10)].map((_, i) => (
                           <motion.div
                             key={i}
-                            className="w-2 h-2 rounded-full bg-gray-200"
-                            initial={{ scale: 0.5, opacity: 0.3 }}
+                            className="w-full h-2 rounded-full bg-gray-200"
+                            initial={{ scale: 0.95, opacity: 0.3 }}
                             whileInView={{
-                              scale: i < (skill.percentage / 10) ? 1 : 0.5,
+                              scale: i < (skill.percentage / 10) ? 1 : 0.95,
                               opacity: i < (skill.percentage / 10) ? 1 : 0.3,
                               backgroundColor: i < (skill.percentage / 10) ? '#f2c0DD' : '#e5e7eb'
                             }}
                             viewport={{ once: true }}
                             transition={{ 
-                              duration: 0.3, 
-                              delay: i * 0.1,
+                              duration: 0.4, 
+                              delay: i * 0.05,
                               type: "spring",
-                              stiffness: 200
+                              stiffness: 300
                             }}
                           />
                         ))}
