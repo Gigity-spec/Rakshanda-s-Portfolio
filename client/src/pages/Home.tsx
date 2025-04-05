@@ -17,9 +17,10 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="font-sans text-[#25092e] bg-white">
+    <main className="min-h-screen font-sans text-[#25092e] bg-white">
       <Header />
       <Hero />
+      <Skills />
       <Experience />
       <div id="education-section" className="relative">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white opacity-30 z-0"></div>
@@ -29,13 +30,12 @@ const Home = () => {
         <CeltaCertification />
         <Education />
       </div>
-      <Testimonials />
       <Publications />
-      <Skills />
+      <Testimonials />
       <Contact />
       <Footer />
       <Chatbot />
-    </div>
+    </main>
   );
 };
 

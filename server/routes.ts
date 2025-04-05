@@ -5,22 +5,35 @@ import { waitlistSchema, contactSchema } from "@shared/schema";
 import { z } from "zod";
 import { fromZodError } from "zod-validation-error";
 import path from "path";
+import { Router } from 'express';
 
-export async function registerRoutes(app: Express): Promise<Server> {
-  // Serve PDF files directly
-  app.get('/documents/:filename', (req: Request, res: Response) => {
-    const filename = req.params.filename;
-    const filePath = path.join(process.cwd(), 'public', 'documents', filename);
-    res.sendFile(filePath);
-  });
-  // Handle waitlist form submissions
-  app.post("/api/waitlist", async (req, res) => {
+const apiRouter = Router();
+
+apiRouter.post('/contact', async (req, res) => {
+  try {
+    const { name, email, message, phone, company, subject } = req.body;
+
+    // Here you would typically handle the contact form submission
+    // For example, sending an email or storing in a database
+    const data = contactSchema.parse(req.body);
+    const message = await storage.createContactMessage(data);
+
+    res.json({ success: true, message: "Message sent successfully", id: message.id });
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      const validationError = fromZodError(error);
+      res.status(400).json({ success: false, message: "Validation error", errors: validationError.message });
+    } else {
+      console.error("Error in contact form submission:", error);
+      res.status(500).json({ success: false, message: "Server error processing your request" });
+    }
+  }
+});
+
+apiRouter.post("/waitlist", async (req, res) => {
     try {
       const data = waitlistSchema.parse(req.body);
-      
-      // Store the waitlist entry
       const entry = await storage.createWaitlistEntry(data);
-      
       res.status(201).json({
         success: true,
         message: "Successfully added to waitlist",
@@ -44,36 +57,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Handle contact form submissions
-  app.post("/api/contact", async (req, res) => {
-    try {
-      const data = contactSchema.parse(req.body);
-      
-      // Store the contact message
-      const message = await storage.createContactMessage(data);
-      
-      res.status(201).json({
-        success: true,
-        message: "Message sent successfully",
-        id: message.id
-      });
-    } catch (error) {
-      if (error instanceof z.ZodError) {
-        const validationError = fromZodError(error);
-        res.status(400).json({
-          success: false,
-          message: "Validation error",
-          errors: validationError.message
-        });
-      } else {
-        console.error("Error in contact form submission:", error);
-        res.status(500).json({
-          success: false,
-          message: "Server error processing your request"
-        });
-      }
-    }
+
+export async function registerRoutes(app: Express): Promise<Server> {
+  // Serve PDF files directly
+  app.get('/documents/:filename', (req: Request, res: Response) => {
+    const filename = req.params.filename;
+    const filePath = path.join(process.cwd(), 'public', 'documents', filename);
+    res.sendFile(filePath);
   });
+  app.use('/api', apiRouter);
 
   const httpServer = createServer(app);
   return httpServer;
