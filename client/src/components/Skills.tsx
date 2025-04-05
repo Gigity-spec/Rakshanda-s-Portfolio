@@ -102,7 +102,7 @@ const Skills = () => {
         </motion.h2>
         
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto auto-rows-fr"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-4xl mx-auto auto-rows-fr"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -118,19 +118,19 @@ const Skills = () => {
               threshold={0.1}
             >
               <div 
-                className="bg-white rounded-xl shadow-md p-3 gradient-border hover-grow h-full flex flex-col"
+                className="bg-white rounded-xl shadow-md p-4 gradient-border hover-grow h-full flex flex-col"
               >
-                <h3 className="font-semibold text-xl text-[#A3886b] mb-4 flex items-center">
+                <h3 className="font-semibold text-lg text-[#A3886b] mb-3 flex items-center">
                   <div className="w-8 h-8 bg-[#f2c0DD] bg-opacity-20 rounded-lg flex items-center justify-center mr-3">
                     <i className={`${category.icon} text-[#f2c0DD] text-lg`}></i>
                   </div>
                   {category.title}
                 </h3>
                 
-                <div className="space-y-3 flex-grow">
+                <div className="space-y-2.5 flex-grow">
                   {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="bg-gray-50 rounded-lg p-2">
-                      <div className="flex justify-between mb-2">
+                    <div key={skillIndex} className="bg-gray-50 rounded-lg p-2.5">
+                      <div className="flex justify-between mb-1.5">
                         <span className="text-sm font-semibold text-[#25092e]">{skill.name}</span>
                         <span className="text-xs font-medium text-[#f2c0DD] bg-[#f2c0DD] bg-opacity-10 px-2 py-0.5 rounded-full">{skill.level}</span>
                       </div>
