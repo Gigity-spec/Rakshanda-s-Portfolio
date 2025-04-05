@@ -118,23 +118,23 @@ const Skills = () => {
               threshold={0.1}
             >
               <div 
-                className="bg-white rounded-xl shadow-md p-8 gradient-border hover-grow h-full flex flex-col min-h-[320px] justify-between"
+                className="bg-white rounded-xl shadow-md p-6 gradient-border hover-grow h-full flex flex-col"
               >
-                <h3 className="font-semibold text-xl text-[#A3886b] mb-6 flex items-center">
-                  <div className="w-10 h-10 bg-[#f2c0DD] bg-opacity-20 rounded-lg flex items-center justify-center mr-4">
-                    <i className={`${category.icon} text-[#f2c0DD] text-xl`}></i>
+                <h3 className="font-semibold text-xl text-[#A3886b] mb-4 flex items-center">
+                  <div className="w-8 h-8 bg-[#f2c0DD] bg-opacity-20 rounded-lg flex items-center justify-center mr-3">
+                    <i className={`${category.icon} text-[#f2c0DD] text-lg`}></i>
                   </div>
                   {category.title}
                 </h3>
                 
-                <div className="space-y-4">
+                <div className="space-y-3 flex-grow">
                   {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="bg-gray-50 rounded-lg p-4">
-                      <div className="flex justify-between mb-3">
+                    <div key={skillIndex} className="bg-gray-50 rounded-lg p-3">
+                      <div className="flex justify-between mb-2">
                         <span className="text-sm font-semibold text-[#25092e]">{skill.name}</span>
-                        <span className="text-sm font-medium text-[#f2c0DD] bg-[#f2c0DD] bg-opacity-10 px-3 py-1 rounded-full">{skill.level}</span>
+                        <span className="text-xs font-medium text-[#f2c0DD] bg-[#f2c0DD] bg-opacity-10 px-2 py-0.5 rounded-full">{skill.level}</span>
                       </div>
-                      <div className="w-full h-2 flex items-center gap-1.5">
+                      <div className="w-full h-1.5 flex items-center gap-1">
                         {[...Array(10)].map((_, i) => (
                           <motion.div
                             key={i}
