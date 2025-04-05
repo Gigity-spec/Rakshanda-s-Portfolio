@@ -118,7 +118,7 @@ const Skills = () => {
               threshold={0.1}
             >
               <div 
-                className="bg-white rounded-xl shadow-md p-6 gradient-border hover-grow h-full flex flex-col min-h-[300px] justify-between"
+                className="bg-white rounded-xl shadow-md p-6 gradient-border hover-grow h-full flex flex-col min-h-[280px] justify-between"
               >
                 <h3 className="font-semibold text-xl text-[#A3886b] mb-3 flex items-center">
                   <i className={`${category.icon} text-[#f2c0DD] mr-3`}></i>
@@ -132,14 +132,26 @@ const Skills = () => {
                         <span className="text-sm font-medium text-[#25092e]">{skill.name}</span>
                         <span className="text-sm font-medium text-[#f2c0DD]">{skill.level}</span>
                       </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
-                        <motion.div 
-                          className="bg-[#f2c0DD] h-2 rounded-full"
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${skill.percentage}%` }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 1, delay: 0.2 }}
-                        ></motion.div>
+                      <div className="w-full h-3 flex items-center gap-1">
+                        {[...Array(10)].map((_, i) => (
+                          <motion.div
+                            key={i}
+                            className="w-2 h-2 rounded-full bg-gray-200"
+                            initial={{ scale: 0.5, opacity: 0.3 }}
+                            whileInView={{
+                              scale: i < (skill.percentage / 10) ? 1 : 0.5,
+                              opacity: i < (skill.percentage / 10) ? 1 : 0.3,
+                              backgroundColor: i < (skill.percentage / 10) ? '#f2c0DD' : '#e5e7eb'
+                            }}
+                            viewport={{ once: true }}
+                            transition={{ 
+                              duration: 0.3, 
+                              delay: i * 0.1,
+                              type: "spring",
+                              stiffness: 200
+                            }}
+                          />
+                        ))}
                       </div>
                     </div>
                   ))}
