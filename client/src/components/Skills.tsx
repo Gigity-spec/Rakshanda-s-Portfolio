@@ -102,7 +102,7 @@ const Skills = () => {
         </motion.h2>
 
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 max-w-7xl mx-auto"
+          className="flex flex-col space-y-4 max-w-5xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -118,21 +118,21 @@ const Skills = () => {
               threshold={0.1}
             >
               <div 
-                className="bg-white/90 backdrop-blur-sm rounded-xl shadow-lg p-4 gradient-border hover-grow h-full flex flex-col relative"
+                className="bg-white/90 backdrop-blur-sm rounded-xl shadow-lg p-6 gradient-border hover-grow relative"
               >
-                <h3 className="font-semibold text-lg text-[#8B5E3C] mb-2 flex items-center">
-                  <div className="w-8 h-8 bg-[#E6A4C4] bg-opacity-30 rounded-lg flex items-center justify-center mr-3">
-                    <i className={`${category.icon} text-[#E6A4C4] text-lg`}></i>
+                <h3 className="font-semibold text-xl text-[#8B5E3C] mb-4 flex items-center">
+                  <div className="w-10 h-10 bg-[#E6A4C4] bg-opacity-30 rounded-lg flex items-center justify-center mr-4">
+                    <i className={`${category.icon} text-[#E6A4C4] text-xl`}></i>
                   </div>
                   {category.title}
                 </h3>
 
-                <div className="space-y-2 flex-grow mt-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
                   {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="bg-gray-50 rounded-lg p-2">
-                      <div className="flex justify-between mb-1.5">
-                        <span className="text-sm font-semibold text-[#25092e]">{skill.name}</span>
-                        <span className="text-xs font-medium text-[#E6A4C4] bg-[#E6A4C4] bg-opacity-10 px-2 py-0.5 rounded-full">{skill.level}</span>
+                    <div key={skillIndex} className="bg-gray-50 rounded-lg p-3">
+                      <div className="flex justify-between mb-2">
+                        <span className="text-base font-semibold text-[#25092e]">{skill.name}</span>
+                        <span className="text-sm font-medium text-[#E6A4C4] bg-[#E6A4C4] bg-opacity-10 px-3 py-1 rounded-full">{skill.level}</span>
                       </div>
                       <div className="w-full h-1.5 flex items-center gap-1">
                         {[...Array(10)].map((_, i) => (
