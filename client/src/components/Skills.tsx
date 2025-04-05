@@ -78,7 +78,7 @@ const Skills = () => {
       }
     }
   };
-  
+
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -87,7 +87,7 @@ const Skills = () => {
       transition: { duration: 0.5 }
     }
   };
-  
+
   return (
     <section id="skills" className="py-16 lg:py-20 section-gradient">
       <div className="container mx-auto px-4">
@@ -100,7 +100,7 @@ const Skills = () => {
         >
           Skills & Expertise
         </motion.h2>
-        
+
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-4xl mx-auto auto-rows-fr"
           variants={containerVariants}
@@ -118,21 +118,21 @@ const Skills = () => {
               threshold={0.1}
             >
               <div 
-                className="bg-white rounded-xl shadow-md p-4 gradient-border hover-grow h-full flex flex-col"
+                className="bg-white/90 backdrop-blur-sm rounded-xl shadow-lg p-4 gradient-border hover-grow h-full flex flex-col"
               >
-                <h3 className="font-semibold text-lg text-[#A3886b] mb-3 flex items-center">
-                  <div className="w-8 h-8 bg-[#f2c0DD] bg-opacity-20 rounded-lg flex items-center justify-center mr-3">
-                    <i className={`${category.icon} text-[#f2c0DD] text-lg`}></i>
+                <h3 className="font-semibold text-lg text-[#8B5E3C] mb-3 flex items-center">
+                  <div className="w-8 h-8 bg-[#E6A4C4] bg-opacity-30 rounded-lg flex items-center justify-center mr-3">
+                    <i className={`${category.icon} text-[#E6A4C4] text-lg`}></i>
                   </div>
                   {category.title}
                 </h3>
-                
+
                 <div className="space-y-2.5 flex-grow">
                   {category.skills.map((skill, skillIndex) => (
                     <div key={skillIndex} className="bg-gray-50 rounded-lg p-2.5">
                       <div className="flex justify-between mb-1.5">
                         <span className="text-sm font-semibold text-[#25092e]">{skill.name}</span>
-                        <span className="text-xs font-medium text-[#f2c0DD] bg-[#f2c0DD] bg-opacity-10 px-2 py-0.5 rounded-full">{skill.level}</span>
+                        <span className="text-xs font-medium text-[#E6A4C4] bg-[#E6A4C4] bg-opacity-10 px-2 py-0.5 rounded-full">{skill.level}</span>
                       </div>
                       <div className="w-full h-1.5 flex items-center gap-1">
                         {[...Array(10)].map((_, i) => (
@@ -143,7 +143,7 @@ const Skills = () => {
                             whileInView={{
                               scale: i < (skill.percentage / 10) ? 1 : 0.95,
                               opacity: i < (skill.percentage / 10) ? 1 : 0.3,
-                              backgroundColor: i < (skill.percentage / 10) ? '#f2c0DD' : '#e5e7eb'
+                              backgroundColor: i < (skill.percentage / 10) ? '#E6A4C4' : '#e5e7eb'
                             }}
                             viewport={{ once: true }}
                             transition={{ 
