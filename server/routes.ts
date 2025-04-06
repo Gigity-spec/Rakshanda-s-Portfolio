@@ -11,12 +11,8 @@ const apiRouter = Router();
 
 apiRouter.post('/contact', async (req, res) => {
   try {
-    const { name, email, message, phone, company, subject } = req.body;
-
-    // Here you would typically handle the contact form submission
-    // For example, sending an email or storing in a database
     const data = contactSchema.parse(req.body);
-    const message = await storage.createContactMessage(data);
+    const contactMessage = await storage.createContactMessage(data);
 
     res.json({ success: true, message: "Message sent successfully", id: message.id });
   } catch (error) {
