@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Experience from '@/components/Experience';
@@ -20,8 +20,8 @@ const Home = () => {
     <main className="min-h-screen font-sans text-[#25092e] bg-white">
       <Header />
       <Hero />
-      <Skills />
       <Experience />
+
       <div id="education-section" className="relative">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white opacity-30 z-0"></div>
         <h2 className="font-soria text-4xl lg:text-5xl text-[#A3886b] text-center mb-10 pt-20 relative z-10">
@@ -30,8 +30,10 @@ const Home = () => {
         <CeltaCertification />
         <Education />
       </div>
+
       <Publications />
       <Testimonials />
+      <Skills /> {/* Skills moved below Testimonials */}
       <Contact />
       <Footer />
       <Chatbot />
